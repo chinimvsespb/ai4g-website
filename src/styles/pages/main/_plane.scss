@@ -1,0 +1,326 @@
+@use '../../base/variables' as *;
+@use '../../base/mixins' as *;
+@use '../../base/animations' as *;
+
+
+// ==============================
+// PLANE
+// ==============================
+.plane {
+  margin-bottom: 80px;
+  background: linear-gradient(180deg, #03065c 0%, rgba($color-container-bg, 0) 100%);
+
+  &__inner {
+    padding-top: 68px;
+
+    @include respond-to(768px) {
+      padding-top: 30px;
+    }
+
+    @include respond-to(640px) {
+      padding-top: 25px;
+    }
+  }
+
+  &__top {
+    display: flex;
+
+    @include respond-to(980px) {
+      margin-bottom: 50px;
+      justify-content: space-between;
+    }
+
+    @include respond-to(640px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__left {
+    margin: 0 260px 0 -60px;
+    display: flex;
+
+    @include respond-to(980px) {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 22px;
+    font-weight: 700;
+    font-size: 29px;
+    line-height: 35px;
+
+    @include respond-to(980px) {
+      margin-bottom: 15px;
+    }
+
+    @include respond-to(768px) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    @include respond-to(640px) {
+      display: none;
+    }
+  }
+
+  &__title-mobile {
+    display: none;
+
+    @include respond-to(640px) {
+      padding-top: 20px;
+      display: flex;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &__right {
+    @include respond-to(980px) {
+      max-width: 410px;
+    }
+
+    @include respond-to(768px) {
+      max-width: 285px;
+    }
+  }
+
+  &__right-item {
+    display: flex;
+    font-size: 17px;
+    line-height: 26px;
+
+    @include respond-to(768px) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &__right-num {
+    width: 13.5px;
+    margin-right: 5px;
+    text-align: center;
+  }
+
+  &__btn {
+    margin: 0 auto;
+    display: flex;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: $color-link;
+    transition: all 0.3s;
+    cursor: pointer;
+    border-bottom: 1px dashed;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+
+    @include respond-to(768px) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+
+  &__bottom-items {
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+    transition: all 1s ease;
+
+    &.active {
+      margin-top: 41px;
+      max-height: 2500px;
+      opacity: 1;
+
+      @include respond-to(768px) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__bottom-item {
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+
+    @include respond-to(640px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__bottom-left {
+    min-width: 60px;
+    margin-right: 10px;
+
+    img {
+      transform: translateY(-7px);
+    }
+
+    @include respond-to(768px) {
+      max-width: initial;
+      min-width: 39px;
+      max-width: 39px;
+    }
+
+    @include respond-to(640px) {
+      display: none;
+    }
+  }
+
+  &__bottom-hidden {
+    display: none;
+
+    @include respond-to(640px) {
+      display: inline-block;
+      min-width: 27px;
+      max-width: 27px;
+      margin-right: 10px;
+    }
+  }
+
+  &__bottom-right {
+    max-width: 718px;
+
+    @include respond-to(768px) {
+      max-width: 100%;
+    }
+  }
+
+  &__bottom-title {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+
+    @include respond-to(768px) {
+      margin-bottom: 14px;
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    @include respond-to(640px) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__bottom-bold {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+
+    @include respond-to(768px) {
+      margin-bottom: 10px;
+      font-size: 11px;
+      line-height: 13px;
+    }
+  }
+
+  &__bottom-list {
+    margin-bottom: 20px;
+    padding-left: 25px;
+
+    @include respond-to(768px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__bottom-li {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+
+    @include respond-to(768px) {
+      margin-bottom: 2px;
+      font-size: 11px;
+      line-height: 13px;
+    }
+  }
+
+  &__bottom-text {
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+
+    @include respond-to(768px) {
+      margin-bottom: 10px;
+      font-size: 11px;
+      line-height: 13px;
+    }
+  }
+
+  &__link {
+    margin-top: 60px;
+
+    @include respond-to(768px) {
+      margin-top: 45px;
+    }
+
+    @include respond-to(640px) {
+      margin-top: 35px;
+    }
+  }
+
+  // анимации для картинок
+  &__img-1 {
+    animation: plane1 0.3s forwards;
+    position: relative;
+    z-index: 10;
+
+    @include respond-to(980px) {
+      width: 59px;
+      height: 227px;
+    }
+  }
+
+  &__img-2 {
+    animation: plane2 0.3s forwards;
+    animation-delay: 0.2s;
+    position: relative;
+    z-index: 7;
+    transform: translateX(-107px);
+    opacity: 0;
+
+    @include respond-to(980px) {
+      width: 74px;
+      height: 232px;
+      margin-top: -5px;
+    }
+  }
+
+  &__img-3 {
+    animation: plane3 0.3s forwards;
+    animation-delay: 0.4s;
+    position: relative;
+    z-index: 4;
+    transform: translateX(-101px);
+    opacity: 0;
+
+    @include respond-to(980px) {
+      width: 74px;
+      height: 230px;
+    }
+  }
+
+  &__img-4 {
+    animation: plane4 0.3s forwards;
+    animation-delay: 0.6s;
+    position: relative;
+    z-index: 1;
+    transform: translateX(-101px);
+    opacity: 0;
+
+    @include respond-to(980px) {
+      width: 68px;
+      height: 221px;
+      margin-top: 5px;
+    }
+  }
+}

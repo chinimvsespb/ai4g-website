@@ -1,0 +1,47 @@
+<!-- src\partials\payment-form.html -->
+<!-- Универсальный попап оплаты -->
+<div class="payment" id="payment" style="display:none">
+  <h3 class="payment__title" id="payment-title">Оплата</h3>
+  <form class="payment__form" action="https://ai4g.server.paykeeper.ru/create/" enctype="multipart/form-data" method="POST" id="payment-form">
+
+
+    <div class="payment__summary" id="payment-summary">
+      К оплате: <span id="payment-amount">—</span> ₽
+    </div>
+
+    <input type="hidden" id="sum" name="sum" value="" readonly />
+    <input type="hidden" name="orderid" id="orderid" />
+    <input type="hidden" name="service_name" id="service_name" value="" />
+
+    <!-- Блок для выбора цены, опциональный -->
+    <div id="price-choices" style="display:none"></div>
+    <input class="payment__name" name="clientid" type="text" placeholder="Имя и Фамилия" required />
+    <input class="payment__phone" name="client_phone" type="tel" placeholder="Телефон" required />
+    <input class="payment__email" name="client_email" type="email" placeholder="Электронная почта" required />
+
+    <div class="payment__choice">
+      <div class="payment__left">Предпочтительный способ связи:</div>
+      <div class="payment__right">
+        <label class="payment__label"><input class="payment__radio" type="radio" name="contact" value="Телефон" checked /><span>Телефон</span></label>
+        <label class="payment__label"><input class="payment__radio" type="radio" name="contact" value="WhatsApp" /><span>WhatsApp</span></label>
+        <label class="payment__label"><input class="payment__radio" type="radio" name="contact" value="Telegram" /><span>Telegram</span></label>
+      </div>
+    </div>
+    <button class="payment__btn" type="submit">Оплатить</button>
+  </form>
+  <div class="payment__agree">
+    Отправляя форму, вы&nbsp;соглашаетесь с&nbsp;обработкой персональных данных и&nbsp;
+    <a href="https://ai4g.ru/oferta.html" target="_blank">
+      <span>условиями договора-оферты</span>
+    </a>
+  </div>
+</div>
+
+<!-- Универсальный попап “Спасибо” -->
+<div class="modal-thanks" id="successful-payment-modal" style="display:none">
+  <div class="modal-thanks__logo">
+    <img src="img/modal-thanks-logo.svg" alt="Ai4G" loading="lazy" />
+  </div>
+  <h3 class="modal-thanks__title" id="thanks-title"></h3>
+  <div class="modal-thanks__text" id="thanks-text"></div>
+</div>

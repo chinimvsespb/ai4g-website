@@ -1,0 +1,39 @@
+@use '../../base/variables' as *;
+@use '../../base/mixins' as *;
+
+.reviews {
+  margin-bottom: 170px;
+
+  @include respond-to(768px) {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 55px;
+    font-weight: 700;
+    font-size: $choice-title-size;
+    line-height: 46px;
+    text-align: center;
+    color: $color-text;
+    font-family: $font-main;
+
+    @include respond-to(768px) {
+      font-size: 27px;
+      line-height: 33px;
+      margin-bottom: 35px;
+    }
+
+    @include respond-to(600px) {
+      font-size: 22px;
+      line-height: 27px;
+    }
+  }
+
+  &__link {
+    margin-top: 75px;
+
+    @include respond-to(768px) {
+      margin-top: 50px;
+    }
+  }
+}

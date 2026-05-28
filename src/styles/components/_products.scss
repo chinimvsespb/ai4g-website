@@ -1,0 +1,108 @@
+@use '../base/variables' as *;
+
+
+.products {
+  padding: 55px 0;
+  background: linear-gradient(180deg, $color-container-bg 0%, rgba($color-container-bg, 0) 102.81%);
+  color: $color-text;                     // белый текст по умолчанию
+  font-family: $font-main;
+
+  &__title {
+    max-width: 660px;
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: $choice-title-size;        // 38px
+    line-height: 46px;
+    text-align: center;
+    color: $color-text;
+
+    @media (max-width: 768px) {
+      font-size: $choice-title-size-mobile; // 22px
+      line-height: 27px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 60px;
+    flex-direction: column;
+    padding: 20px 0 0 0;
+
+    @media (max-width: 768px) {
+      gap: 40px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+
+    @media (max-width: 768px) {
+      gap: 10px;
+    }
+  }
+
+  &__block {
+    font-weight: 700;
+    color: $color-secondary;             // #06ea6f
+    display: flex;
+    gap: 44px;
+
+    @media (max-width: 768px) {
+      gap: 10px;
+    }
+  }
+
+  &__num {
+    font-size: 38px;
+    line-height: 30px;
+    text-align: center;
+    width: 20px;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      line-height: 22px;
+      width: 15px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 32px;
+    color: $color-text;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  &__decor-img {
+    height: 150px;
+    align-self: center;
+  }
+
+  &__text {
+    // стили, если используются
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    border-bottom: 1px solid;
+    color: $color-link;                  // #0386ff
+    z-index: 5;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $color-link-hover;          // #93cbff
+    }
+  }
+}

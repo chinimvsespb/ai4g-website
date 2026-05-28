@@ -1,0 +1,78 @@
+// src/scss/pages/coaching-session.scss
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+@use 'session-base';
+
+// Специфика для coaching-session
+.session {
+  background-color: #bc03cc;
+
+  &__text-block::after {
+    background: linear-gradient(180deg, $color-bg-footer-gradient, rgba($color-container-bg, 0) 100%);
+  }
+
+  &__link {
+    background: $color-link;
+    color: $color-text;
+
+    &:hover {
+      background: $color-secondary;
+    }
+
+    &_green {
+      background: $color-secondary;
+      color: $color-bg;
+
+      &:hover {
+        background: $color-link;
+        color: $color-text;
+      }
+    }
+  }
+}
+
+.solution {
+  &__item_04 {
+    position: relative;
+    top: 35px;
+
+    @include respond-to(920px) {
+      top: 0;
+    }
+  }
+}
+
+.servise-session {
+  &__text {
+    color: #3ca1ff;
+  }
+
+  &__decor-img {
+    height: auto;
+    position: absolute;
+    left: -373px;
+    top: 29px;
+    width: 309px;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.5s;
+
+    &.show {
+      opacity: 1;
+    }
+
+    @include respond-to(920px) {
+      left: 450px;
+      top: 29px;
+      width: 253px;
+    }
+
+    @include respond-to(768px) {
+      top: 29px;
+      width: 203px;
+    }
+
+    @include respond-to(450px) {
+      display: none;
+    }
+  }
+}

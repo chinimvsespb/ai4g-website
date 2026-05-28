@@ -1,0 +1,47 @@
+@use '../../base/variables' as *;
+@use '../../base/mixins' as *;
+
+/* ========== HERO ========== */
+.hero {
+  height: 330px;
+
+  &__inner {
+    height: 100%;
+    padding-top: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond-to(980px) {
+      padding-top: 85px;
+    }
+  }
+
+  &__title {
+    margin-right: 25px;
+    font-weight: 900;
+    font-size: 43px;
+    line-height: 53px;
+    color: $color-text;
+
+    @include respond-to(980px) {
+      min-width: 95px;
+      margin-right: 10px;
+      font-size: 24px;
+      line-height: 29px;
+    }
+  }
+
+  &__subtitle {
+    max-width: 580px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: $color-text;
+
+    @include respond-to(980px) {
+      font-size: $font-size-base;
+      line-height: 22px;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('partials/head.html', {"title": "Техники - Основные термины и определения для саморазвития - Ai4G", "description": "Откройте для себя основные термины и определения техник, необходимых для личностного роста и улучшения качества жизни.🔹 Нейросервис Ai4G - Запишись на serf-сессию"})
+
+
+<body class="page-technics-main">
+  <div class="wrapper">
+    @@include('partials/header.html', {})
+
+
+    <main>
+      <section class="arrow-up"></section>
+      <section class="technics-main">
+        <div class="technics-main__wrapper">
+          <h1 class="technics-main__title">Техники развития</h1>
+          <!-- Добавьте кнопки для фильтрации -->
+          <div class="technics-main__filter filter">
+            <div class="filter__wrapper">
+              <div class="filter__body">
+                <div class="filter__block">
+                  <div class="filter__title">Техники:</div>
+                  <div class="filter__content">
+                    <button class="filter__btn" data-category="motives" data-time="all">Мотивы</button>
+                    <button class="filter__btn" data-category="meanings" data-time="all">Смыслы</button>
+                    <button class="filter__btn" data-category="processes" data-time="all">Процессы</button>
+                    <button class="filter__btn" data-category="words" data-time="all">Слова</button>
+                    <button class="filter__btn" data-category="states" data-time="all">Состояния</button>
+                    <!-- <button class="filter__btn" data-category="all" data-time="all">Все техники</button> -->
+                  </div>
+                </div>
+                <div class="filter__block">
+                  <div class="filter__title">Время:</div>
+                  <div class="filter__content">
+                    <button class="filter__btn" data-category="all" data-time="lt10">До 10 минут</button>
+                    <button class="filter__btn" data-category="all" data-time="10-30">10 - 30 минут</button>
+                    <button class="filter__btn" data-category="all" data-time="30-60">30 - 60 минут</button>
+                    <!-- <button class="filter__btn" data-category="all" data-time="all">Все времена</button> -->
+                  </div>
+                </div>
+              </div>
+              <div class="filter__reset-all">
+                <button class="reset-filter" data-reset="all">✖ Сбросить фильтры</button>
+              </div>
+            </div>
+
+            <div class="filter__sort sort">
+              <div class="sort__dropdown">
+                <div class="sort__selected">
+                  <span class="sort__sort">Сортировка</span>
+                  <img src="img/technics/arrow.svg" alt="" class="sort__selected-arrow" style="display: none" />
+                </div>
+                <div class="sort__options">
+                  <div class="sort__option" data-value="default">
+                    <span>По умолчанию</span>
+                  </div>
+                  <div class="sort__option sort__option_01" data-value="asc">
+                    <span>По алфавиту (А-Я)</span>
+
+                    <img src="img/technics/arrow.svg" alt="" />
+                  </div>
+                  <div class="sort__option sort__option_02" data-value="desc"><span>По алфавиту (Я-А)</span><img src="img/technics/arrow.svg" alt="" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="technics-main__no-cards no-cards-placeholder" id="no-cards-placeholder" style="display: none">
+            Нет карточек, соответствующих вашему запросу.
+          </div>
+          <div class="technics-main__body"></div>
+        </div>
+      </section>
+    </main>
+
+
+  </div>
+  @@include('partials/footer.html', {})
+  @@include('partials/js.html', {})
+  <script type="module" src="/pages/technics-page.js"></script>
+
+</body>
+
+</html>

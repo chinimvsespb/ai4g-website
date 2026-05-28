@@ -1,0 +1,347 @@
+@use '../../base/variables' as *;
+@use '../../base/mixins' as *;
+@use '../../base/animations' as *;
+
+.fairway {
+  overflow: hidden;
+  background-image: url("../img/fairway-bg-1.svg");
+  background-repeat: no-repeat;
+  background-size: 560px auto;
+  background-position: left bottom;
+
+
+  &__wrapper {
+    overflow: hidden;
+    background-image: url("../img/fairway-bg-2.svg");
+    background-repeat: no-repeat;
+    background-size: 957px auto;
+    background-position: 1083px 1383px;
+  }
+
+  &__container {
+    max-width: 1146px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  &__row {
+    margin-bottom: 60px;
+    position: relative;
+
+    @include respond-to(768px) {
+      margin-bottom: 30px;
+    }
+
+    img {
+      max-width: 1090px;
+      width: 100%;
+    }
+  }
+
+  &__row-back {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $color-bg;
+  }
+
+  &__title {
+    max-width: 660px;
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: $choice-title-size; // 38px
+    line-height: 46px;
+    text-align: center;
+    color: $color-text;
+
+    @include respond-to(768px) {
+      font-size: 27px;
+      line-height: 33px;
+      margin-bottom: 20px;
+    }
+
+    @include respond-to(600px) {
+      font-size: 22px;
+      line-height: 27px;
+    }
+
+    &_2 {
+      max-width: 660px;
+      margin: 0 auto;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      text-align: center;
+      color: $color-text;
+    }
+
+    &_3 {
+      max-width: 660px;
+      margin: 0 auto;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 28px;
+      text-align: center;
+      color: $color-text;
+    }
+  }
+
+  &__item {
+    margin-bottom: 60px;
+    display: flex;
+    position: relative;
+
+    @include respond-to(768px) {
+      margin-bottom: 45px;
+    }
+
+    &_1 {
+      margin-bottom: 30px;
+    }
+
+    &.fi-2,
+    &.fi-3 {
+      .fairway__item-suptitle {
+        max-width: 560px;
+      }
+
+      @include respond-to(768px) {
+
+        .fairway__item-suptitle,
+        .fairway__item-bold {
+          max-width: 400px;
+        }
+      }
+
+      @include respond-to(600px) {
+
+        .fairway__item-suptitle,
+        .fairway__item-bold {
+          max-width: 560px;
+        }
+
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__item-arrow {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: -25px;
+    cursor: pointer;
+
+    @include respond-to(600px) {
+      margin: 22px 0 25px;
+      padding: 7.5px 19px;
+      align-items: center;
+      position: initial;
+      background: #373049;
+      border-radius: 8px;
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    &-svg {
+      margin-right: 25px;
+
+      @include respond-to(810px) {
+        margin-right: 12px;
+      }
+
+      svg {
+        fill: $color-link;
+        transition: all 0.3s;
+
+        @include respond-to(810px) {
+          width: 32px;
+          height: 46px;
+        }
+
+        @include respond-to(600px) {
+          width: 16px;
+          height: 21px;
+        }
+      }
+    }
+
+    &-text {
+      max-width: 140px;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 16px;
+      color: $color-link;
+      transition: all 0.3s;
+
+      @include respond-to(810px) {
+        font-size: 10px;
+        line-height: 12px;
+      }
+
+      @include respond-to(600px) {
+        max-width: 100%;
+      }
+    }
+
+    &:hover .fairway__item-arrow-text {
+      color: $color-link-hover;
+    }
+
+    &:hover .fairway__item-arrow-svg svg {
+      fill: $color-link-hover;
+    }
+  }
+
+  &__item-left {
+    width: 38px;
+    margin-right: 44px;
+    font-weight: 900;
+    font-size: 38px;
+    line-height: 46px;
+    text-align: center;
+    color: $color-accent;
+
+    @include respond-to(768px) {
+      width: 25px;
+      margin-right: 18px;
+      font-size: 27px;
+      line-height: 33px;
+    }
+
+    @include respond-to(600px) {
+      width: 21px;
+      margin-right: 12px;
+      font-size: 20px;
+      line-height: 24px;
+      margin-left: -7px;
+    }
+
+    &_1 {
+      width: 20px;
+      margin-right: 44px;
+      font-weight: 700;
+      font-size: 38px;
+      line-height: 30px;
+      text-align: center;
+      color: $color-secondary;
+
+      @include respond-to(768px) {
+        width: 25px;
+        margin-right: 18px;
+        font-size: 27px;
+        line-height: 33px;
+      }
+
+      @include respond-to(600px) {
+        width: 21px;
+        margin-right: 12px;
+        font-size: 20px;
+        line-height: 24px;
+        margin-left: -7px;
+      }
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 8px;
+    font-weight: 900;
+    font-size: 38px;
+    line-height: 46px;
+    color: $color-secondary;
+
+    @include respond-to(768px) {
+      margin-bottom: 16px;
+      font-size: 27px;
+      line-height: 33px;
+    }
+
+    @include respond-to(600px) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    &_1 {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 32px;
+      color: $color-secondary;
+    }
+  }
+
+  &__item-suptitle {
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    @include respond-to(768px) {
+      margin-bottom: 15px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  &__item-li {
+    font-size: 16px;
+    line-height: 24px;
+
+    @include respond-to(768px) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &__item-bold {
+    max-width: 610px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+
+    @include respond-to(768px) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    @include respond-to(600px) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  &__item-purple-bold {
+    margin: 15px 0 28px 0;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: $color-accent;
+
+    @include respond-to(768px) {
+      margin: 15px 0 15px 0;
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    @include respond-to(600px) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  &__footer {
+    margin: 70px 0 83px;
+    position: relative;
+
+    @include respond-to(600px) {
+      margin: 45px 0;
+    }
+  }
+
+  &__link {
+    margin-top: -7px;
+    z-index: 11;
+  }
+}

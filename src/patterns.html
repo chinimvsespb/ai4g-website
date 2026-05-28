@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('partials/head.html', {"title": "Паттерны - Основные термины и определения для развития - Ai4G", "description": "Узнайте основные термины и определения паттернов для глубокого понимания психологических механизмов и их применения в жизни.🔹 Ai4G - Запишись на serf-сессию"})
+
+
+<body class="page-patterns">
+  <div class="wrapper">
+    @@include('partials/header.html', {})
+
+
+    <main>
+      <section class="patterns">
+        <div class="patterns__top">
+          <div class="patterns__container">
+            <h1 class="patterns__title">
+              Паттерны
+              <span>Устойчивое, контекстно-обусловленное повторение человеком собственного поведения или мышления для достижения определенных результатов.</span>
+            </h1>
+          </div>
+        </div>
+
+        <div class="patterns__bottom">
+          <div class="patterns__container">
+            <!-- Навигационные чипсы (Swiper) -->
+            <nav class="patterns__filters" aria-label="Фильтры паттернов">
+              <div class="swiper-wrapper patterns__filters-scroll" id="filters-scroll">
+                <!-- Чипсы вставятся динамически -->
+              </div>
+            </nav>
+
+            <!-- Контейнер для всех секций с паттернами -->
+            <div id="patterns-container">
+              <!-- Динамический контент -->
+            </div>
+
+            <p class="patterns__footer-text">
+              Каждый из этих паттернов отражает устойчивые стратегии поведения, осознание которых помогает управлять своей жизнью осознанно.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    @@include('partials/footer.html', {})
+    @@include('partials/js.html', {})
+    <script type="module" src="/pages/patterns-page.js"></script>
+
+
+
+  </div>
+
+</body>
+
+</html>

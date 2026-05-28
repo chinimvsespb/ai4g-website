@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('partials/head.html', {"title": "Коучинговая сессия с Еленой Семеновой – Путь к успеху - Ai4G", "description": "Запишитесь на коучинговую сессию с Еленой Семеновой, чтобы избавиться от стрессов и продвигаться к личным и профессиональным целям.🔹 Нейросервис Ai4G"})
+
+
+
+
+<body class="body page-coaching-session">
+  <div class="wrapper">
+    @@include('partials/header.html', {})
+
+    <main class="page">
+      <!-- Предложение -->
+      <section class="session">
+        <div class="session__title-block">
+          <div class="session__container">
+            <div class="session__content">
+              <h1 class="session__title">Коучинговая сессия <br /><span>с Еленой Семеновой —</span></h1>
+              <picture>
+                <source srcset="img/coaching-session/coach.webp" type="image/webp" />
+                <img src="img/coaching-session/coach.jpg" alt="" class="session__coach" />
+              </picture>
+            </div>
+          </div>
+        </div>
+
+        <div class="session__text-block">
+          <div class="session__container">
+            <div class="session__subtitle">это решение вопросов с</div>
+            <div class="session__solution solution">
+              <div class="solution__item solution__item_01">
+                <img src="img/coaching-session/square.png" alt="" class="solution__img" />
+                <div class="solution__text">Выгоранием и стрессом</div>
+              </div>
+
+              <div class="solution__item solution__item_02">
+                <img src="img/coaching-session/triangle.png" alt="" class="solution__img solution__img_triangle" />
+                <div class="solution__text">Кратным увеличением дохода</div>
+              </div>
+
+              <div class="solution__item solution__item_03">
+                <img src="img/coaching-session/triangle.png" alt="" class="solution__img solution__img_triangle" />
+                <div class="solution__text">Прокрастинацией</div>
+              </div>
+
+              <div class="solution__item solution__item_04">
+                <img src="img/coaching-session/square.png" alt="" class="solution__img" />
+                <div class="solution__text">Работа с жизненными тупиками</div>
+              </div>
+
+              <div class="solution__item solution__item_05">
+                <img src="img/coaching-session/square.png" alt="" class="solution__img" />
+                <div class="solution__text">Масштабированием бизнеса</div>
+              </div>
+            </div>
+
+            <div class="session__servise servise-session">
+              <div class="servise-session__items">
+                <div class="servise-session__item">
+                  <picture>
+                    <source srcset="img/coaching-session/cost.webp" type="image/webp" />
+                    <img src="img/coaching-session/cost.png" alt="" class="servise-session__img" />
+                  </picture>
+                  <div class="servise-session__block">
+                    <div class="servise-session__title">Стоимость продукта</div>
+                    <div class="servise-session__text">15 000 ₽</div>
+                  </div>
+                </div>
+
+                <div class="servise-session__item">
+                  <picture>
+                    <source srcset="img/coaching-session/time.webp" type="image/webp" />
+                    <img src="img/coaching-session/time.png" alt="" class="servise-session__img" />
+                  </picture>
+                  <div class="servise-session__block">
+                    <div class="servise-session__title">Длительность</div>
+                    <div class="servise-session__text">60 минут</div>
+                  </div>
+                </div>
+
+                <div class="servise-session__item">
+                  <picture>
+                    <source srcset="img/coaching-session/format.webp" type="image/webp" />
+                    <img src="img/coaching-session/format.png" alt="" class="servise-session__img" />
+                  </picture>
+                  <div class="servise-session__block">
+                    <div class="servise-session__title">
+                      Формат проведения <br />
+                      консультации
+                    </div>
+                    <div class="servise-session__text">онлайн</div>
+                  </div>
+                </div>
+                <picture>
+                  <source srcset="img/coaching-session/decor-session.webp" type="image/webp" />
+                  <img src="img/coaching-session/decor-session.png" alt="" class="servise-session__decor-img" />
+                </picture>
+              </div>
+            </div>
+            <div class="session__btn-block">
+              <div class="session__text">Запишитесь на консультацию <br />и задайте интересующие вопросы</div>
+
+
+              <a href="#modal-request" class="session__link link" data-fancybox data-modal-title="Запись на коуч-сессию">
+                записаться
+              </a>
+            </div>
+            <div class="session__text">Оплатите коучинговую сессию</div>
+            <a href="#payment" class="session__link link session__link_green" data-fancybox data-modal-title="Оплата коуч-сессии" data-sum="15000" data-service="Коуч-сессия">
+              Оплатить
+            </a>
+
+
+          </div>
+        </div>
+      </section>
+    </main>
+    @@include('partials/footer.html', {})
+    @@include('partials/js.html', {})
+    @@include('partials/request-form.html', {})
+    @@include('partials/payment-form.html', {})
+    <script type="module" src="/pages/coaching-session-page.js"></script>
+
+  </div>
+</body>
+
+</html>

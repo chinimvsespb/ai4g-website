@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('partials/head.html', {"title": "Страница не найдена - Ai4G", "description": "Страница не найдена 🔹 Нейросервис Ai4G - Запишись на serf-сессию"})
+
+
+<body class="body page-404">
+  <div class="wrapper">
+    @@include('partials/header.html', {})
+    <main class="page">
+
+      <div class="error">
+        <div class="error__over"></div>
+        <div class="error__404">404</div>
+        <div class="error__notfound">
+          <p class="error__text">страница не найдена</p>
+          <a class="error__link" href="index.html">перейти на главную страницу</a>
+        </div>
+      </div>
+      <section class="fairway">
+        <div class="fairway__wrapper">
+          <div class="fairway__container">
+            <div class="fairway__row">
+              <img src="img/fairway.png" alt="fairway" loading="lazy" />
+              <div class="fairway__row-back"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  @@include('partials/footer.html', {})
+  @@include('partials/js.html', {})
+
+</body>
+
+</html>

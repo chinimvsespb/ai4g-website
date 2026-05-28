@@ -1,0 +1,92 @@
+// main.scss
+
+//base-----------------
+@use 'base/global';
+@use 'base/modals';
+@use 'base/reset';
+@use 'base/scroll-up';
+@use 'base/swiper';
+@use 'base/typography';
+@use 'base/animations';
+@use 'base/page-themes';
+
+
+//components-----------------
+
+//services.html
+@use 'components/drop-list';
+
+//services.html  index.html
+@use 'components/products';
+
+//Кнопки
+@use 'components/buttons';
+@use 'components/table';
+
+//layout-----------------
+@use 'layout/_container.scss';
+@use 'layout/_wrapper.scss';
+@use 'base/footer';
+@use 'base/header';
+
+//utilities-----------------
+@use 'utilities/_helpers.scss';
+
+//pages-----------------
+@use 'pages/allegro.scss';
+@use 'pages/art-coaching';
+@use 'pages/legal';
+@use 'pages/patterns';
+@use 'pages/vozmozhnosti';
+@use 'pages/technics-main';
+@use 'pages/technic';
+@use 'pages/personal-strategy';
+@use 'pages/error';
+@use 'pages/mentors-page';
+
+
+//form
+@use 'form/modal-oplata';
+@use 'form/modal-pay';
+@use 'form/payment';
+
+//index.html-------------------------------
+//топ
+@use 'pages/main/top';
+
+//4 плоскости развития
+@use 'pages/main/plane';
+
+//фарватер Ai4G
+@use 'pages/main/fairway';
+
+//Наставники
+@use 'pages/main/mentors';
+
+//Ai4G выбирают
+@use 'pages/main/choice';
+
+//Отзывы
+@use 'pages/main/reviews';
+
+//Возможности и паттерны
+@use 'pages/main/capability';
+
+//Наши партнёры
+@use 'pages/main/partners';
+
+//Техники развития
+@use 'pages/main/techniques';
+
+
+//--------------------------------------------
+//Продукты - сессии
+
+//Бизнес-коучинг
+@use 'pages/coaching-session';
+
+//Карьерная консультация
+@use 'pages/career-advice';
+
+//Serf-сессия
+@use 'pages/serf-session';

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('partials/head.html', {"title": "Возможности - основные термины и определения", "description": "Узнайте основные термины и определения возможностей для глубокого понимания психологических механизмов и их применения в жизни.🔹 Ai4G - Запишись на serf-сессию"})
+
+
+<body class="page-vozmozhnosti">
+
+  <div class="wrapper">
+    @@include('partials/header.html', {})
+
+   <main>
+  <section class="vozmozhnosti-intro">
+    <div class="vozmozhnosti-intro__container">
+      <h1 class="vozmozhnosti-intro__title">Возможности</h1>
+      <p class="vozmozhnosti-intro__description">
+        Возможности человека — это ресурсы, которые помогают достигать целей, действовать увереннее и справляться с трудностями.
+      </p>
+      <p class="vozmozhnosti-intro__paragraph">
+        На этой странице собраны основные категории возможностей человека. Каждая категория показывает, на что можно опираться в жизни, работе и развитии.
+      </p>
+    </div>
+  </section>
+
+  <section class="vozmozhnosti">
+    <div class="vozmozhnosti__container">
+      <div class="vozmozhnosti__header">
+        <p class="vozmozhnosti__header-text">
+          Выберете категорию, чтобы узнать о ней подробнее и увидеть примеры возможностей в этой области.
+        </p>
+        <!-- Навигация по категориям (липкая панель) -->
+        <nav class="vozmozhnosti__filters" aria-label="Категории возможностей">
+          <div class="swiper-wrapper vozmozhnosti__filters-scroll" id="filters-scroll">
+            <!-- чипсы будут <a class="vozmozhnosti__filter-chip swiper-slide"> -->
+          </div>
+        </nav>
+
+        <!-- Контейнер для всех категорий -->
+        <div id="categories-container"></div>
+
+        <p class="vozmozhnosti__footer-text">
+          Каждая из этих категорий взаимосвязана, и их гармоничное развитие способствует достижению успеха и удовлетворенности.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+  </div>
+
+  @@include('partials/footer.html', {})
+  @@include('partials/js.html', {})
+  <script type="module" src="/pages/vozmozhnosti-page.js"></script>
+</body>
+
+</html>

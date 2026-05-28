@@ -1,0 +1,262 @@
+@use '../base/variables' as *;
+
+
+
+// --- Модальное окно заявок ---
+.modal-request {
+  display: none;
+  width: 610px;
+  padding: 68px 59px 35px;
+  border-radius: 20px;
+
+  &__title {
+    margin-bottom: 47px;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 37px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-bg;
+    font-family: $font-main;
+  }
+
+  &__name,
+  &__phone {
+    width: 100%;
+    margin-bottom: 45px;
+    padding-bottom: 10px;
+
+    font-family: $font-alt, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+
+    color: $color-bg;
+
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $color-accent;
+
+    &::placeholder {
+      font-family: $font-alt, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      color: #737373;
+      opacity: 1;
+    }
+  }
+
+  &__choice {
+    margin-bottom: 40px;
+    display: flex;
+  }
+
+  &__left {
+    max-width: 140px;
+    margin-right: 20px;
+    font-family: $font-alt, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: $color-bg;
+  }
+
+  &__item {
+    position: relative;
+
+    input {
+      z-index: 5;
+
+      &:hover+.just-validate-error-label,
+      &:focus+.just-validate-error-label {
+        display: none;
+      }
+    }
+  }
+
+  &__captcha {
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 350px) {
+      margin: 0 -20px 20px -16px;
+    }
+  }
+
+  &__label {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    span {
+      font-family: $font-alt, sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 21px;
+      color: $color-bg;
+    }
+  }
+
+  &__btn {
+    width: 490px;
+    height: 80px;
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eaeceb;
+    color: #c9c9c9;
+    border-radius: $border-radius-main;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 37px;
+    text-transform: uppercase;
+    border: none;
+    transition: all 0.3s;
+    pointer-events: none;
+
+    &.active {
+      background: $color-secondary;
+      color: $color-bg;
+      pointer-events: all;
+      cursor: pointer;
+    }
+  }
+
+  &__agree {
+    max-width: 430px;
+    margin: 0 auto;
+    font-family: $font-alt, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: $color-bg;
+
+    span {
+      color: rgb(3, 89, 255);
+    }
+  }
+
+  &__radio {
+    width: 45px;
+    height: 25px;
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    outline: none;
+
+    &::before {
+      margin-right: 20px;
+      display: inline-block;
+      content: url("../img/check-disabled.svg");
+      cursor: pointer;
+    }
+
+    &:checked {
+      margin-right: 10px;
+      margin-left: -10px;
+      display: inline-block;
+      content: url("../img/check.svg");
+    }
+  }
+}
+
+// --- Сообщение об успешной заявке ---
+.modal-thanks {
+  display: none;
+  width: 610px;
+  height: 375px;
+  padding-top: 60px;
+  background: $color-text;
+  border-radius: 20px;
+
+  &__logo {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__title {
+    max-width: 410px;
+    margin: 0 auto 20px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: $color-bg;
+  }
+
+  &__text {
+    max-width: 308px;
+    margin: 0 auto;
+    font-family: $font-alt, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: $color-bg;
+  }
+}
+
+// Валидация
+.is-invalid {
+  border-color: #e24343 !important;
+  background-color: #fff1f1;
+}
+
+.is-valid {
+  border-color: #44bb44 !important;
+  background-color: #f1fff1;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  -webkit-transition:
+    background-color 600000s 0s,
+    color 600000s 0s;
+  transition:
+    background-color 600000s 0s,
+    color 600000s 0s;
+}
+
+// Лейбл ошибки (можно тоже переменные)
+.just-validate-error-label {
+  position: absolute;
+  top: 9px;
+  left: 19px;
+  width: fit-content;
+  background: #ff58b3;
+  border: 1px solid #ff58b3;
+  padding: 5px;
+  border-radius: 10px;
+  color: #fff !important;
+}
+
+// Fancybox close
+.fancybox-button.fancybox-close-small {
+  margin: 5px 5px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    color: #bdbdbd;
+    transition: all 0.3s;
+  }
+
+  &:hover svg {
+    color: $color-accent;
+  }
+}

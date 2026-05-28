@@ -1,0 +1,187 @@
+@use '../../base/variables' as *;
+@use '../../base/mixins' as *;
+@use '../../base/animations' as *;
+
+
+.choice {
+  margin-bottom: 100px;
+  overflow-x: hidden;
+
+  @include respond-to(768px) {
+    margin-bottom: 45px;
+  }
+
+  @include respond-to(600px) {
+    margin-bottom: 33px;
+  }
+
+  &__title {
+    margin-bottom: 58px;
+    font-weight: 700;
+    font-size: $choice-title-size; // 38px
+    line-height: 46px;
+    text-align: center;
+    color: $color-text;
+    font-family: $font-main;
+
+    @include respond-to(768px) {
+      font-size: 27px;
+      line-height: 33px;
+    }
+
+    @include respond-to(600px) {
+      font-size: 22px;
+      line-height: 27px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 55px;
+
+    @include respond-to(600px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    opacity: 0;
+
+    @include respond-to(600px) {
+      margin-bottom: 25px;
+      max-width: 280px;
+      width: 100%;
+      transform: translateX(20px);
+    }
+
+    &.ci-1 img {
+      transform: translateY(15px);
+    }
+
+    &.ci-2 img {
+      transform: translateY(6px);
+    }
+
+    &.ci-2 {
+      margin: 0 40px 0 30px;
+
+      @include respond-to(600px) {
+        margin: 0 0 25px 0;
+      }
+    }
+
+    &.ci-3 {
+      @include respond-to(600px) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__item-img {
+    height: 110px;
+    margin-bottom: 35px;
+    display: flex;
+
+    @include respond-to(768px) {
+      height: 80px;
+      margin-bottom: 20px;
+    }
+
+    @include respond-to(600px) {
+      justify-content: center;
+    }
+  }
+
+  &__item-ul {
+    max-width: 280px;
+
+    @include respond-to(600px) {
+      max-width: 280px;
+      width: 100%;
+    }
+  }
+
+  &__item-li {
+    font-size: 14px;
+    line-height: 21px;
+    color: $color-text;
+    font-family: $font-main;
+
+    @include respond-to(768px) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &__link {
+    margin: 75px 0;
+    color: $color-link;
+
+    @include respond-to(880px) {
+      margin: 75px auto;
+    }
+
+    @include respond-to(600px) {
+      margin: 35px auto;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-centr {
+      margin: 0 8px;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 34px;
+      white-space: nowrap;
+      position: relative;
+      top: -11px;
+      color: $color-link;
+      font-family: $font-main;
+
+      @include respond-to(768px) {
+        font-size: 20px;
+        line-height: 24px;
+        top: -6px;
+      }
+
+      @include respond-to(600px) {
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+
+    &-left,
+    &-right {
+      width: 100%;
+
+      @include respond-to(768px) {
+        z-index: 5;
+      }
+
+      img {
+        width: 100%;
+        height: 2px;
+      }
+    }
+  }
+}
+
+// Анимационные классы
+.ci-1 {
+  transform: translateX(-100px);
+}
+
+.ci-2 {
+  transform: translateX(-250px);
+}
+
+.ci-3 {
+  transform: translateX(-290px);
+}

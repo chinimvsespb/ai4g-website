@@ -1,0 +1,76 @@
+// src/scss/pages/career-advice.scss
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+@use 'session-base';
+
+.session {
+  background-color: #077df0;
+
+  &__text-block::after {
+    background: linear-gradient(180deg, #0a48a2, rgba($color-container-bg, 0) 100%);
+  }
+
+  &__link {
+    background: $color-accent;
+    color: $color-text;
+    &:hover {
+      background: $color-secondary;
+    }
+    &_green {
+      background: $color-secondary;
+      color: $color-bg;
+      &:hover {
+        background: $color-accent;
+        color: $color-text;
+      }
+    }
+  }
+
+  &__subtitle {
+    max-width: 550px;
+  }
+}
+
+.solution {
+  row-gap: 30px;
+  &__item_04,
+  &__item_06 {
+    top: 0;
+  }
+  &__img {
+    margin: 2px 20px 0 5px;
+    &_triangle {
+      margin: 2px 16px 0 0;
+    }
+  }
+  &__text {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+.servise-session {
+  margin: 70px 0 100px 0;
+  &__text {
+    color: $color-secondary;
+  }
+  &__decor-img {
+    left: -332px;
+    top: 28px;
+    width: 216px;
+    @include respond-to(920px) {
+      left: 507px;
+      top: 27px;
+      width: 165px;
+    }
+    @include respond-to(768px) {
+      left: 471px;
+      top: 30px;
+      width: 136px;
+    }
+    @include respond-to(650px) {
+      left: 375px;
+      width: 136px;
+    }
+  }
+}

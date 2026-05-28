@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('partials/head.html', {"title": "Транскрибатор «Аллегро» - расшифровка аудио и видео с помощью ИИ - Ai4G", "description": "Используйте транскрибатор «Аллегро» для быстрой и точной расшифровки аудио и видеофайлов с помощью технологий искусственного интеллекта.🔹 Нейросервис Ai4G"})
+
+
+<body class="body page-transcribator">
+  <div class="wrapper">
+  @@include('partials/header.html', {})
+
+
+    <main class="page">
+      <!-- offer-trans  -->
+      <section class="offer-trans">
+        <div class="offer-trans__container">
+          <div class="offer-trans__body">
+            <div class="offer-trans__content">
+              <div class="offer-trans__overhead overhead _anim-items _anim-no-hide">Ваш помощник здесь</div>
+              <h1 class="offer-trans__title _anim-items _anim-no-hide">Транскрибатор «Аллегро»</h1>
+
+              <div class="offer-trans__subtitle _anim-items _anim-no-hide">
+                Расшифровка аудио и видео с помощью <span>И</span>скусственного <span>И</span>нтеллекта
+              </div>
+              <div class="servise">
+                <div class="servise__item _anim-items _anim-no-hide">
+                  <picture>
+                    <source srcset="img/transcribator/cost.webp" type="image/webp" />
+                    <img src="img/transcribator/cost.png" alt="" class="servise__img" />
+                  </picture>
+                  <div class="servise__block">
+                    <div class="servise__title">Стоимость продукта</div>
+                    <div class="servise__subtitle">за 1 файл до 3 часов</div>
+                    <div class="servise__text">800 ₽</div>
+                    <div class="servise__subtitle">за 1 файл до 1 часа</div>
+                    <div class="servise__text">500 ₽</div>
+                  </div>
+                </div>
+                <div class="servise__item _anim-items _anim-no-hide">
+                  <picture>
+                    <source srcset="img/transcribator/time.webp" type="image/webp" />
+                    <img src="img/transcribator/time.png" alt="" class="servise__img" />
+                  </picture>
+                  <div class="servise__block">
+                    <div class="servise__title">Объем файла</div>
+                    <div class="servise__text">до 3 часов (180 мин)</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="offer-trans__text _anim-items _anim-no-hide">
+                Оставьте заботы о расшифровке в прошлом — ваш идеальный помощник «Аллегро» уже здесь для воплощения ваших идей!
+              </div>
+              <div class="offer-trans__bottom _anim-items _anim-no-hide">
+                <!-- ссылка на файл для скачивания -->
+                <a href="#button-hipe" class="offer-trans__btn btn">Начать сейчас</a>
+                <div class="offer-trans__clarification">Попробуй прямо сейчас</div>
+              </div>
+            </div>
+            <div class="offer-trans__image _anim-items _anim-no-hide">
+              <img src="img/transcribator/allegro.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="servises">
+        <div class="servises__container">
+          <div class="servises__text">
+            <p class="servises__text-p _anim-items _anim-no-hide">
+              Сервис позволяет преобразовывать аудио и видеозаписи в текст быстро и точно с помощью технологии искусственного интеллекта. Транскрибатор
+              «Аллегро» поддерживает более <span class="black">300 медиаформатов</span> и распознает свыше <span class="black">50</span> языков, обеспечивая
+              легкость в работе с глобальным контентом.
+            </p>
+            <p class="servises__text-p _anim-items _anim-no-hide">
+              Получите свои транскрипты, субтитры или конспекты быстро, автоматически и без необходимости регистрации. Ускорьте свой рабочий процесс с помощью
+              конвертации медиаконтента в текст, доступный для редактирования, всего за несколько минут
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div id="button-hipe"></div>
+
+      <div class="trancrib _anim-items _anim-no-hide" id="drop-area">
+        <div class="trancrib__container">
+          <div class="trancrib__body">
+            <form action="upload.php" class="trancrib__form dropzone" id="my-dropzone">
+              <div class="trancrib__img">
+                <img src="img/transcribator/download.png" alt="" />
+              </div>
+              <div class="trancrib__text trancrib-text"></div>
+            </form>
+            <button class="trancrib__link" id="upload-button">Загрузить файл</button>
+            <div class="trancrib__bottom">
+              <button class="trancrib__link trancrib__link_add" id="button-add">
+                <img src="img/transcribator/plus.svg" alt="" />
+                Добавить еще файлы
+              </button>
+              <button class="trancrib__link trancrib__link_proccess" id="button-proccess">
+                Конвертировать
+                <img src="img/transcribator/arrow-right.svg" alt="" />
+              </button>
+            </div>
+            <div id="alert-info" class="alert-info"></div>
+          </div>
+          <div id="price-info" class="price-info"></div>
+        </div>
+      </div>
+
+      <!-- О продукте -->
+      <div class="product" id="product">
+        <div class="product__container">
+          <div class="product__body">
+            <div class="product__content">
+              <div class="product__item _anim-items _anim-no-hide">
+                <div class="product__number-item">1.</div>
+                <div class="product__title">
+                  <div class="product__label">Загрузите аудио или видео</div>
+                  <div class="product__text-item">
+                    Перетащите файл в назначенную область или нажмите кнопку «Загрузить файл». Вы также можете загрузить видео, вставив ссылку.
+                  </div>
+                </div>
+              </div>
+
+              <div class="product__item _anim-items _anim-no-hide">
+                <div class="product__number-item">2.</div>
+                <div class="product__title">
+                  <div class="product__label">Преобразуйте ваш файл <br />в текст</div>
+                  <div class="product__text-item">Нажмите «Конвертировать», и «Аллегро» преобразует файл в текст.</div>
+                </div>
+              </div>
+
+              <div class="product__item _anim-items _anim-no-hide">
+                <div class="product__number-item">3.</div>
+                <div class="product__title">
+                  <div class="product__label">Скачайте результат</div>
+                  <div class="product__text-item">
+                    Вы можете загрузить результат на свое устройство в формате .docx, .xlsx, .srt или .txt. Выберите нужный формат и нажмите кнопку
+                    "Загрузить".
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Форматы -->
+      <section class="format" id="format">
+        <div class="format__container">
+          <div class="format__body">
+            <div class="format__block">
+              <h2 class="format__title _anim-items _anim-no-hide">
+                Конвертируйте <br />
+                различные аудио <br />
+                и видео файлы в текст
+              </h2>
+              <div class="format__text _anim-items _anim-no-hide">
+                Вы можете использовать «Аллегро» <br />
+                для конвертации самых разных <br />
+                форматов файлов
+              </div>
+            </div>
+            <div class="format__content">
+              <div class="format__items">
+                <div class="format__item _anim-items _anim-no-hide">M4A</div>
+                <div class="format__item _anim-items _anim-no-hide">OGG</div>
+
+                <div class="format__item _anim-items _anim-no-hide">MOV</div>
+                <div class="format__item _anim-items _anim-no-hide">MP4</div>
+                <div class="format__item _anim-items _anim-no-hide">MP3</div>
+                <div class="format__item _anim-items _anim-no-hide">WAV</div>
+              </div>
+              <div class="format__item-text _anim-items _anim-no-hide">в</div>
+              <div class="format__item _anim-items _anim-no-hide">TXT</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--  selection-trans-->
+      <section class="selection-trans">
+        <div class="selection-trans__container">
+          <div class="selection-trans__body">
+            <div class="selection-trans__content">
+              <div class="selection-trans__overhead overhead _anim-items _anim-no-hide">Ваш эксперт по расшифровке</div>
+              <h2 class="selection-trans__subtitle _anim-items _anim-no-hide">Почему Транскрибатор «Аллегро» — ваш идеальный помощник?</h2>
+              <div class="selection-trans__bottom">
+                <!-- 1 -->
+                <div class="selection-trans__item _anim-items _anim-no-hide">
+                  <div class="selection-trans__check">
+                    <img src="img/ng/triggered-check.svg" alt="" />
+                  </div>
+                  <div class="selection-trans__title-bottom">
+                    <span>Реальная скорость:</span> Получите точную расшифровку за считанные минуты — быстро и эффективно.
+                  </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="selection-trans__item _anim-items _anim-no-hide">
+                  <div class="selection-trans__check">
+                    <img src="img/ng/triggered-check.svg" alt="" />
+                  </div>
+                  <div class="selection-trans__title-bottom">
+                    <span>Широкая поддержка форматов:</span> Работайте с более чем 300 медиаформатами, включая популярные аудио и видео.
+                  </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="selection-trans__item _anim-items _anim-no-hide">
+                  <div class="selection-trans__check">
+                    <img src="img/ng/triggered-check.svg" alt="" />
+                  </div>
+                  <div class="selection-trans__title-bottom">
+                    <span>Многоязычность:</span> Аллегро распознает более 50 языков, что облегчает работу с международным контентом.
+                  </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="selection-trans__item _anim-items _anim-no-hide">
+                  <div class="selection-trans__check">
+                    <img src="img/ng/triggered-check.svg" alt="" />
+                  </div>
+                  <div class="selection-trans__title-bottom">
+                    <span>Простота в использовании:</span> Интуитивно понятный интерфейс и пошаговая инструкция делают процесс расшифровки легким и доступным
+                    для всех.
+                  </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="selection-trans__item _anim-items _anim-no-hide">
+                  <div class="selection-trans__check">
+                    <img src="img/ng/triggered-check.svg" alt="" />
+                  </div>
+                  <div class="selection-trans__title-bottom">
+                    <span>Экономия времени:</span>Автоматическая расшифровка освобождает вас от рутинной работы, позволяя сосредоточиться на более важных
+                    задачах.
+                  </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="selection-trans__item _anim-items _anim-no-hide">
+                  <div class="selection-trans__check">
+                    <img src="img/ng/triggered-check.svg" alt="" />
+                  </div>
+                  <div class="selection-trans__title-bottom">
+                    <span>Гибкие форматы выходных файлов:</span>Скачивайте ваши транскрипты в различных удобных форматах (.docx, .xlsx, .srt, .txt) для
+                    легкого редактирования и использования.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- skill -->
+      <section class="skill">
+        <div class="skill__container">
+          <div class="skill__content">
+            <h2 class="skill__title _anim-items _anim-no-hide">Транскрибатор <br />«Аллегро» —</h2>
+            <div class="skill__text _anim-items _anim-no-hide">
+              Транскрибатор «Аллегро» специализируется на применении искусственного интеллекта для предоставления услуг транскрибирования аудио и видео
+              контента. Использование ИИ позволяет «Аллегро» эффективно и точно конвертировать устную речь в текстовый формат, что является значимым ресурсом
+              для различных секторов, включая медиа, образование, юриспруденцию и мероприятия.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- faq -->
+      <section class="faq">
+        <div class="faq__container">
+          <div class="faq__content">
+            <div class="faq__overhead overhead _anim-items _anim-no-hide">Вопрос - ответ</div>
+            <h2 class="faq__title _anim-items _anim-no-hide">Часто задаваемые вопросы (FAQ)</h2>
+            <div class="faq__block">
+              <div class="faq__item _anim-items _anim-no-hide">
+                <h3 class="faq__item-title">
+                  Какой формат файлов поддерживает «Аллегро»?
+                  <span class="faq__icon">+</span>
+                </h3>
+                <p>Транскрибатор «Аллегро» поддерживает более 300 медиаформатов, включая MP3, MP4, WAV, MOV и OGG.</p>
+              </div>
+
+              <div class="faq__item _anim-items _anim-no-hide">
+                <h3 class="faq__item-title">
+                  Сколько времени занимает обработка файла?
+                  <span class="faq__icon">+</span>
+                </h3>
+                <p>
+                  Обработка файла занимает всего несколько минут в зависимости от его размера и длины. Мы уделяем особое внимание скорости и качеству
+                  трансформации.
+                </p>
+              </div>
+
+              <div class="faq__item _anim-items _anim-no-hide">
+                <h3 class="faq__item-title">
+                  Какие цены на услуги транскрипции?
+                  <span class="faq__icon">+</span>
+                </h3>
+                <p>Стоимость транскрипции составляет 800 ₽ за файл до 3 часов и 500 ₽ за файл до 1 часа.</p>
+              </div>
+
+              <div class="faq__item _anim-items _anim-no-hide">
+                <h3 class="faq__item-title">
+                  В каких форматах можно скачать результат?
+                  <span class="faq__icon">+</span>
+                </h3>
+                <p>Вы можете скачать результат в следующих форматах: .docx, .xlsx, .srt, .txt.</p>
+              </div>
+
+              <div class="faq__item _anim-items _anim-no-hide">
+                <h3 class="faq__item-title">
+                  Нужна ли регистрация для использования сервиса?
+                  <span class="faq__icon">+</span>
+                </h3>
+                <p>Нет, для использования сервиса «Аллегро» регистрация не требуется. Просто загрузите файл и начните процесс транскрипции!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const faqContent = document.querySelector(".faq__content");
+
+          faqContent.addEventListener("click", function (event) {
+            const clickedItemTitle = event.target.closest(".faq__item-title");
+            if (clickedItemTitle) {
+              const answer = clickedItemTitle.nextElementSibling; // Получаем ul
+              const icon = clickedItemTitle.querySelector(".faq__icon");
+              const faqItem = clickedItemTitle.closest(".faq__item"); // Получаем ближайший родительский элемент .faq__item
+
+              faqItem.classList.toggle("active"); // Переключаем класс active
+
+              if (faqItem.classList.contains("active")) {
+                icon.textContent = "-"; // Меняем на минус
+              } else {
+                icon.textContent = "+"; // Меняем на плюс
+              }
+            }
+          });
+        });
+      </script>
+      <!--      <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            // Скрываем все ответы при загрузке
+            const allAnswers = document.querySelectorAll(".faq__item p");
+            allAnswers.forEach((answer) => {
+              answer.style.display = "none"; // Скрываем каждый ответ
+            });
+
+            const faqContent = document.querySelector(".faq__content");
+
+            faqContent.addEventListener("click", function (event) {
+              // Проверяем, что кликнутый элемент имеет класс faq__item-title
+              if (event.target.classList.contains("faq__item-title")) {
+                const answer = event.target.nextElementSibling;
+                const icon = event.target.querySelector(".faq__icon");
+
+                if (answer.style.display === "block") {
+                  answer.style.display = "none"; // Скрываем ответ
+                  icon.textContent = "+"; // Меняем на плюс
+                } else {
+                  answer.style.display = "block"; // Показываем ответ
+                  icon.textContent = "-"; // Меняем на минус
+                }
+              }
+            });
+          });
+        </script> -->
+
+      <!-- offered -->
+      <section class="offered" id="offer">
+        <div class="offered__container">
+          <div class="offered__body">
+            <div class="offered__image _anim-items _anim-no-hide">
+              <img src="img/transcribator/allegro-offered.png" alt="Транскрибатор Allegro" />
+            </div>
+            <div class="offered__content">
+              <div class="offered__overhead overhead _anim-items _anim-no-hide">Попробуйте наш продукт</div>
+              <h1 class="offered__title _anim-items _anim-no-hide">Транскрибатор «Аллегро»</h1>
+
+              <div class="offered__subtitle _anim-items _anim-no-hide">Идеальное решение для расшифровки <span>и</span> анализа аудио и видео</div>
+
+              <div class="offered__text _anim-items _anim-no-hide">
+                Убедитесь сами, насколько просто и быстро «Аллегро» выполняет свою работу. Загрузите файл и получите результаты!
+              </div>
+
+              <div class="offered__bottom _anim-items _anim-no-hide">
+                <a href="#button-hipe" class="offered__btn btn">Загрузить файл</a>
+                <div class="offered__clarification">Начните прямо сейчас!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  @@include('partials/footer.html', {})
+  @@include('partials/js.html', {})
+
+
+    <div class="modal-thanks" id="modal-thanks">
+      <div class="modal-thanks__logo">
+        <img src="img/modal-thanks-logo.svg" alt="Ai4G" loading="lazy" />
+      </div>
+      <h3 class="modal-thanks__title">Вы&nbsp;успешно записались на&nbsp;serf-сессию.</h3>
+      <div class="modal-thanks__text">В&nbsp;ближайшее время мы&nbsp;свяжемся с&nbsp;вами указанным способом</div>
+    </div>
+
+    <!-- modal-oplata форма и выбор файла для транскрибатора -->
+    <div class="modal-oplata" id="modal-oplata">
+      <h3 class="modal-oplata__title">Транскрибация видео-аудио контента</h3>
+      <form class="modal-oplata__form" id="oplata-form" enctype="multipart/form-data">
+        <!-- Имя -->
+        <div class="modal-oplata__item">
+          <input class="modal-oplata__name" data-validate-field="name" name="Имя" type="text" placeholder="Представьтесь, пожалуйста" />
+        </div>
+
+        <!--  Телефон-->
+        <div class="modal-oplata__item">
+          <input class="modal-oplata__phone" data-validate-field="tel" name="Телефон" type="tel" placeholder="Телефон" />
+        </div>
+
+        <!-- email -->
+        <div class="modal-oplata__item">
+          <input class="modal-oplata__email" data-validate-field="email" name="email" type="email" placeholder="Электронная почта для отправки файла" />
+        </div>
+
+        <div class="modal-oplata__choice">
+          <div class="modal-oplata__left">Предпочтительный способ отправки файла:</div>
+          <div class="modal-oplata__right">
+            <!-- Telegram -->
+            <label class="modal-oplata__label">
+              <input class="modal-oplata__radio" type="radio" name="sent" value="Telegram" checked />
+              <span>Telegram</span>
+            </label>
+
+            <!--Электронная почта  -->
+            <label class="modal-oplata__label">
+              <input class="modal-oplata__radio" type="radio" name="sent" value="Электронная почта" />
+              <span>Электронная почта</span>
+            </label>
+          </div>
+        </div>
+        <div class="modal-oplata__choice">
+          <div class="modal-oplata__left">Выберете формат текстового файла:</div>
+          <div class="modal-oplata__right">
+            <!--  docx-->
+            <label class="modal-oplata__label">
+              <input class="modal-oplata__radio" type="radio" name="format" value=".docx" checked />
+              <span>.docx</span>
+            </label>
+
+            <!-- xlsx -->
+            <label class="modal-oplata__label"> <input class="modal-oplata__radio" type="radio" name="format" value=".xlsx" /><span>.xlsx</span> </label>
+
+            <!-- srt -->
+            <label class="modal-oplata__label"> <input class="modal-oplata__radio" type="radio" name="format" value=".srt" /><span>.srt</span> </label>
+
+            <!-- txt -->
+            <label class="modal-oplata__label"> <input class="modal-oplata__radio" type="radio" name="format" value=".txt" /><span>.txt</span> </label>
+          </div>
+        </div>
+        <form action="pay.php" method="post">
+          <button class="modal-oplata__btn" type="submit">к оплате</button>
+        </form>
+      </form>
+      <div class="modal-oplata__agree">
+        Отправляя форму, вы&nbsp;соглашаетесь с&nbsp;обработкой персональных данных и&nbsp;
+        <a href="https://ai4g.ru/oferta.html">
+          <span>условиями договора-оферты</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- modal-pay для транскрибатора -->
+
+    <!-- 			<div class="modal-pay__agree">
+				Отправляя форму, вы&nbsp;соглашаетесь с&nbsp;обработкой персональных данных и&nbsp;
+				<a href="https://ai4g.ru/oferta.html">
+					<span>условиями договора-оферты</span>
+				</a>
+			</div>
+		</div> -->
+
+    <!--оплата прошла успешно  -->
+    <div class="file-sent" id="file-sent">
+      <div class="file-sent__content">
+        <h3 class="file-sent__title file-sent__title_white">оплата успешно <br />проведена</h3>
+        <div class="file-sent__title">файл отправлен <br />на почту!</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

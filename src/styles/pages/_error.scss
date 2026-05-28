@@ -1,0 +1,76 @@
+
+@use '../base/variables' as *;
+
+/* error ------------------------------------------------------------------- */
+.error {
+  margin: 240px 0 0;
+
+  &__over {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__404 {
+    position: relative;
+    z-index: 2;
+    margin: 100px 0 70px;
+    font-size: 110px;
+    text-align: center;
+    color: #fcf9f9;
+  }
+
+  &__notfound {
+    position: relative;
+    z-index: 2;
+    font-size: 2em;
+    text-align: center;
+    color: $color-text;
+  }
+
+  .error__text {
+    margin: 0 0 20px;
+  }
+
+  .error__link {
+    font-size: 0.8em;
+    color: $color-accent;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      color: #ff0000;
+      text-decoration: none;
+    }
+
+    &:active {
+      color: #ffffff;
+      text-decoration: none;
+    }
+  }
+}
+
+.page-404 {
+  .fairway {
+    margin: 165px 0 0;
+    background-image: none;
+  }
+
+  .wrapper {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .error {
+    margin: 170px 0 0;
+
+    &__404 {
+      font-size: 80px;
+    }
+  }
+
+  .page-404 {
+    .fairway {
+      margin: 70px 0 0;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@use '../../base/variables' as *;
+@use '../../base/mixins' as *;
+@use '../../base/animations' as *;
+
+// CAPABILITY
+.capability {
+  padding: 80px 0;
+  background: linear-gradient(2deg, $color-capability-gradient 0%, rgba(44, 51, 75, 0) 100%);
+
+  @include respond-to(768px) {
+    padding: 25px 0;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 29px;
+    line-height: 35px;
+    text-align: center;
+    color: $color-text;
+
+    @include respond-to(768px) {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    @include respond-to(768px) {
+      gap: 0;
+    }
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    @include respond-to(768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  &__img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 9px;
+
+    @include respond-to(768px) {
+      max-width: 200px;
+    }
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+
+    @include respond-to(768px) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  &__links-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    line-height: 150%;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: $color-text;
+    font-size: 16px;
+  }
+
+  &__description {
+    list-style: none;
+
+    li {
+      position: relative;
+      font-size: $font-size-base;
+      font-weight: 400;
+      line-height: 1.8;
+      color: $color-text;
+      margin-bottom: 10px;
+      padding-left: 25px;
+
+      @include respond-to(768px) {
+        font-size: $font-size-mobile;
+        line-height: 22px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        background-color: $color-text;
+        border-radius: 50%;
+      }
+    }
+  }
+}

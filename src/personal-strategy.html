@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('partials/head.html', {"title": "Разработайте свой план успеха на 2026 год - Ai4G", "description": "Пройдите Стратегию Новый Год для выявления своих жизненных паттернов и обретения уверенности в своих действиях и решениях.🔹 Нейросервис Ai4G - Запишись на serf-сессию"})
+
+
+<body class="body page-personal-strategy">
+  <div class="wrapper">
+    @@include('partials/header.html', {})
+
+
+
+    <main class="page">
+      <!-- Предложение  -->
+      <section class="offer">
+        <div class="offer__container">
+          <div class="offer__body">
+            <div class="offer__content">
+              <div class="offer__overhead overhead _anim-items _anim-no-hide">Строим планы на успех</div>
+              <h1 class="offer__title _anim-items _anim-no-hide">Разработайте свой план успеха на 2026 год</h1>
+              <div class="tree tree_mob">
+                <div class="tree__image _anim-items _anim-no-hide">
+                  <img src="img/ng/ng2.png" alt="" />
+                  <div class="tree__hotspot" data-text="Чего вы сами себе желаете на Новый год?" style="top: 5%; left: 53%"></div>
+                  <div class="tree__hotspot" data-text="Какие у вас были успехи, чем вы гордитесь?" style="top: 50%; left: 62%"></div>
+                  <div class="tree__hotspot" data-text="В какие проекты, дела и значимые отношения вы вкладывали силы, время и душу?" style="top: 62%; left: 40%"></div>
+                  <div class="tree__hotspot" data-text="Повышение по карьерной лестнице" style="top: 83%; left: 82%"></div>
+                  <div class="tree__hotspot" data-text="Путешествие" style="top: 85%; left: 39%"></div>
+                  <div class="tree__hotspot" data-text="Любимое хобби" style="top: 80%; left: 17%"></div>
+                  <div class="tree__hotspot" data-text="Гармоничные отношения" style="top: 91%; left: 27%"></div>
+                  <div class="tree__hotspot" data-text="Стройное, здоровое тело" style="top: 94%; left: 64%"></div>
+                </div>
+              </div>
+              <div class="offer__text _anim-items _anim-no-hide">Начните новый год с четкими целями и стратегией их достижения!</div>
+              <div class="offer__text _anim-items _anim-no-hide">💡 <span>Дерево Года 2026 </span>— это уникальная программа, которая поможет вам:</div>
+              <ul class="offer__list">
+                <li class="offer__item _anim-items _anim-no-hide">
+                  <span>Определить 12 целей на год: </span>выплатить ипотеку, увеличить доход, найти работу мечты или создать гармоничные отношения и многое
+                  другое
+                </li>
+                <li class="offer__item _anim-items _anim-no-hide">
+                  <span>Разработать пошаговый план действий,</span> который приведет вас к желаемому результату.
+                </li>
+                <li class="offer__item _anim-items _anim-no-hide"><span>Структурировать ресурсы и время,</span> чтобы эффективно двигаться вперед.</li>
+              </ul>
+              <div class="offer__text _anim-items _anim-no-hide">
+                ✨ <span>Не ждите боя курантов — выберите главное желание заранее и начните воплощать мечты!</span>
+              </div>
+              <div class="offer__bottom">
+                <!-- ссылка на модальное окно записи на сессию -->
+                <a href="#modal-request" class="offer__btn btn _anim-items _anim-no-hide" data-fancybox data-modal-title="Запись на он-лайн встречу"> записаться </a>
+                <div class="offer__clarification _anim-items _anim-no-hide">Запись на он-лайн встречу</div>
+              </div>
+            </div>
+            <div class="tree tree_comp">
+              <div class="tree__image _anim-items _anim-no-hide">
+                <img src="img/ng/ng2.png" alt="" />
+                <div class="tree__hotspot" data-text="Чего вы сами себе желаете на Новый год?" style="top: 5%; left: 53%"></div>
+                <div class="tree__hotspot" data-text="Какие у вас были успехи, чем вы гордитесь?" style="top: 50%; left: 62%"></div>
+                <div class="tree__hotspot" data-text="В какие проекты, дела и значимые отношения вы вкладывали силы, время и душу?" style="top: 62%; left: 40%"></div>
+                <div class="tree__hotspot" data-text="Повышение по карьерной лестнице" style="top: 83%; left: 82%"></div>
+                <div class="tree__hotspot" data-text="Путешествие" style="top: 85%; left: 39%"></div>
+                <div class="tree__hotspot" data-text="Любимое хобби" style="top: 80%; left: 17%"></div>
+                <div class="tree__hotspot" data-text="Гармоничные отношения" style="top: 91%; left: 27%"></div>
+                <div class="tree__hotspot" data-text="Стройное, здоровое тело" style="top: 94%; left: 64%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="tooltip" class="tooltip"></div>
+
+      <script>
+        // Get tooltip element
+        var tooltip = document.getElementById("tooltip");
+
+        // Function to open tooltip and set text
+        function openTooltip(text, x, y) {
+          tooltip.textContent = text;
+          tooltip.style.display = "block";
+          tooltip.style.left = x + "px";
+          tooltip.style.top = y + 20 + "px"; // position below the hotspot
+        }
+
+        // Add event listeners to hotspots
+        var hotspots = document.querySelectorAll(".tree__hotspot");
+        hotspots.forEach((hotspot) => {
+          hotspot.addEventListener("click", function (event) {
+            var text = this.getAttribute("data-text");
+            // Get the position of the hotspot
+            var rect = this.getBoundingClientRect();
+            // Calculate tooltip position
+            var x = rect.left + window.pageXOffset;
+            var y = rect.top + window.pageYOffset;
+            openTooltip(text, x, y);
+          });
+        });
+
+        // Close the tooltip if the user clicks anywhere outside of it
+        window.onclick = function (event) {
+          if (!event.target.classList.contains("tree__hotspot")) {
+            tooltip.style.display = "none";
+          }
+        };
+      </script>
+
+      <div class="ng-line _anim-items _anim-no-hide">
+        <img src="img/mentors-page-line.svg" alt="line" class="ng-line-bg" />
+      </div>
+
+      <!-- Что вы получите  -->
+      <section class="advantages">
+        <div class="advantages__container">
+          <div class="advantages__body">
+            <h2 class="advantages__subtitle _anim-items _anim-no-hide">Что вы получите, присоединившись к программе?</h2>
+            <div class="advantages__content">
+              <!-- 1 -->
+              <div class="advantages__item _anim-items _anim-no-hide">
+                <div class="advantages__number">1</div>
+                <div class="advantages__title-item">Четкий план достижения целей</div>
+                <div class="advantages__text-item">
+                  Мы вместе:
+                  <ul>
+                    <li>
+                      Определим <span>12 ключевых целей на год:</span> повысить доход, получить повышение, закрыть долги, выйти замуж или вывести отношения на
+                      новый уровень, отправиться в путешествие, и многое другое.
+                    </li>
+                    <li>Разработаем <span>пошаговую дорожную карту,</span> которая поможет вам эффективно двигаться к каждому результату.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 2 -->
+              <div class="advantages__item _anim-items _anim-no-hide">
+                <div class="advantages__number">2</div>
+                <div class="advantages__title-item">Проверенные стратегии для роста доходов</div>
+                <div class="advantages__text-item">
+                  Вы получите работающие инструменты и рекомендации, которые помогут:
+                  <ul>
+                    <li><span>Увеличить доход</span> уже в первые месяцы.</li>
+                    <li><span>Оптимизировать ресурсы и время,</span> чтобы быстрее достичь желаемого.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 3 -->
+              <div class="advantages__item _anim-items _anim-no-hide">
+                <div class="advantages__number">3</div>
+                <div class="advantages__title-item">Постоянная поддержка и мотивация</div>
+                <div class="advantages__text-item">
+                  Программа включает:
+                  <ul>
+                    <li><span>3 ключевые Zoom-встречи:</span> определяем цели, распределяем ресурсы и строим план.</li>
+                    <li><span>4 ежеквартальных мастермайнда:</span> анализируем прогресс, корректируем шаги и усиливаем мотивацию.</li>
+                    <li><span>Telegram-канал и кураторство: </span>вы всегда будете в окружении поддержки и вдохновения.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 4 -->
+              <div class="advantages__item _anim-items _anim-no-hide">
+                <div class="advantages__number">4</div>
+                <div class="advantages__title-item">Удобный и гибкий формат</div>
+                <div class="advantages__text-item">
+                  <ul>
+                    <li><span>Легкий старт:</span> начните сразу после первой встречи.</li>
+                    <li><span>Гибкость: </span>корректируйте план по мере необходимости.</li>
+                    <li><span>Простой контроль: </span>отслеживайте свои успехи с помощью интуитивных шаблонов и чек-листов.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Слайдер -->
+      <div class="slider-swiper">
+        <div class="swiper my-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide _anim-items _anim-no-hide">
+              <img src="img/ng/slider/slide01.jpg" alt="Slide 1" />
+              <p>Здоровье</p>
+            </div>
+            <div class="swiper-slide _anim-items _anim-no-hide">
+              <img src="img/ng/slider/slide02.jpg" alt="Slide 2" />
+              <p>Карьера</p>
+            </div>
+            <div class="swiper-slide _anim-items _anim-no-hide">
+              <img src="img/ng/slider/slide03.jpg" alt="Slide 3" />
+              <p>Семья</p>
+            </div>
+            <div class="swiper-slide _anim-items _anim-no-hide">
+              <img src="img/ng/slider/slide04.jpg" alt="Slide 4" />
+              <p>Друзья</p>
+            </div>
+            <div class="swiper-slide _anim-items _anim-no-hide">
+              <img src="img/ng/slider/slide05.jpg" alt="Slide 5" />
+              <p>Дети</p>
+            </div>
+            <div class="swiper-slide _anim-items _anim-no-hide">
+              <img src="img/ng/slider/slide06.jpg" alt="Slide 6" />
+              <p>Увлечения</p>
+            </div>
+            <div class="swiper-slide _anim-items _anim-no-hide">
+              <img src="img/ng/slider/slide07.jpg" alt="Slide 6" />
+              <p>Отдых</p>
+            </div>
+            <div class="swiper-slide _anim-items _anim-no-hide">
+              <img src="img/ng/slider/slide08.jpg" alt="Slide 6" />
+              <p>Финансы</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Как работает программа?-->
+      <section class="triggered">
+        <div class="triggered__container">
+          <div class="triggered__body">
+            <!-- 	<div class="triggered__image _anim-items _anim-no-hide">
+							<img class="triggered__img" src="img/ng/calendar.png" alt="">
+						</div> -->
+            <div class="triggered__content">
+              <div class="triggered__overhead overhead _anim-items _anim-no-hide">Создайте стратегию роста и процветания</div>
+              <h2 class="triggered__subtitle subtitle _anim-items _anim-no-hide">Как работает программа?</h2>
+              <div class="triggered__bottom">
+                <!-- 1 -->
+                <div class="triggered__item _anim-items _anim-no-hide">
+                  <div class="triggered__img-bottom">
+                    <img src="img/ng/triggered-check.svg" alt="" />
+                  </div>
+                  <div class="triggered__title-bottom">Шаг 1: Встреча №1 — Создаем стратегию года</div>
+                  <div class="triggered__text-bottom">
+                    На первой Zoom-встрече мы:
+
+                    <ul>
+                      <li>Определим 12 главных целей.</li>
+                      <li>Составим пошаговый план с распределением ресурсов и временных этапов.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="triggered__item _anim-items _anim-no-hide">
+                  <div class="triggered__img-bottom">
+                    <img src="img/ng/triggered-check.svg" alt="" />
+                  </div>
+                  <div class="triggered__title-bottom">Шаг 2: Регулярный контроль и поддержка</div>
+                  <div class="triggered__text-bottom">
+                    <ul>
+                      <li>
+                        Каждые 3 месяца проводим <span>мастермайнд-сессии</span>, где оцениваем результаты, вносим корректировки и вдохновляемся новыми
+                        возможностями.
+                      </li>
+                      <li>Поддержка в Telegram-канале на протяжении всего года.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="triggered__item _anim-items _anim-no-hide">
+                  <div class="triggered__img-bottom">
+                    <img src="img/ng/triggered-check.svg" alt="" />
+                  </div>
+                  <div class="triggered__title-bottom">Шаг 3: Начните год с уверенностью</div>
+                  <div class="triggered__text-bottom">
+                    Пока все загадывают желания под бой курантов, вы уже будете знать, чего хотите и как этого добиться!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Оплата  -->
+      <section class="call-action">
+        <div class="call-action__container">
+          <div class="call-action__content">
+            <div class="call-action__overhead overhead _anim-items _anim-no-hide">Создайте основу для вашего успеха</div>
+            <h3 class="call-action__title _anim-items _anim-no-hide">Гибкая система оплаты</h3>
+
+            <div class="call-action__subtitle _anim-items _anim-no-hide"><span>Стоимость: 4500р</span></div>
+            <div class="call-action__text _anim-items _anim-no-hide"><span>Оплата программы поэтапная:</span></div>
+
+            <ol>
+              <li class="call-action__item _anim-items _anim-no-hide">
+                <span>Первый этап:</span> Оплачиваете стартовую встречу, на которой создается ваш план действий и стратегия года.
+              </li>
+              <li class="call-action__item _anim-items _anim-no-hide"><span>Ежеквартальные мастермайнды:</span> Оплата производится перед каждой сессией.</li>
+            </ol>
+
+            <div class="call-action__text _anim-items _anim-no-hide">🎯 Вы контролируете свои расходы и платите только за конкретный этап работы.</div>
+
+            <a href="#payment" class="call-action__btn btn _anim-items _anim-no-hide" data-fancybox>Оплатить</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Плюсы -->
+      <section class="selection">
+        <div class="selection__container">
+          <div class="selection__body">
+            <div class="selection__content">
+              <!-- 			<div class="selection__overhead overhead _anim-items _anim-no-hide">Почему выбрать "Дерево Года 2026"?</div> -->
+              <h2 class="selection__subtitle subtitle _anim-items _anim-no-hide">Почему выбрать "Дерево Года 2026"?</h2>
+              <div class="selection__bottom">
+                <!-- 1 -->
+                <div class="selection__item _anim-items _anim-no-hide">
+                  <div class="selection__img-bottom">
+                    <img src="img/ng/triggered-check.svg" alt="" />
+                  </div>
+                  <div class="selection__title-bottom"><span>Реальные результаты:</span> 95% участников достигают своих целей уже в первые месяцы.</div>
+                </div>
+
+                <!-- 2 -->
+                <div class="selection__item _anim-items _anim-no-hide">
+                  <div class="selection__img-bottom">
+                    <img src="img/ng/triggered-check.svg" alt="" />
+                  </div>
+                  <div class="selection__title-bottom"><span>Индивидуальный подход:</span> все инструменты адаптируются под вашу ситуацию.</div>
+                </div>
+
+                <!-- 3 -->
+                <div class="selection__item _anim-items _anim-no-hide">
+                  <div class="selection__img-bottom">
+                    <img src="img/ng/triggered-check.svg" alt="" />
+                  </div>
+                  <div class="selection__title-bottom"><span>Простота:</span> пошаговая структура и поддержка экспертов.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Запись и оплата  -->
+      <section class="call-quote">
+        <div class="call-quote__container">
+          <div class="call-quote__content">
+            <div class="call-quote__overhead overhead _anim-items _anim-no-hide">Ваше будущее начинается здесь</div>
+            <h3 class="call-quote__title _anim-items _anim-no-hide">Время действовать — начните строить свое будущее уже сейчас!</h3>
+            <div class="call-quote__text _anim-items _anim-no-hide">🔥 Пока другие гадают, чего хотят в новом году, вы уже начнете путь к своей мечте.</div>
+            <div class="call-quote__text _anim-items _anim-no-hide"><span>👉 Запишитесь на стартовую встречу и сделайте первый шаг к успеху!</span></div>
+            <div class="call-quote__bottom">
+              <a href="#modal-request" class="call-quote__btn btn btn_request _anim-items _anim-no-hide" data-fancybox data-modal-title="Запись на он-лайн встречу"> Записаться </a>
+
+              <a href="#payment" class="call-quote__btn btn btn_payment _anim-items _anim-no-hide" data-fancybox data-modal-title="Оплата коуч-сессии" data-sum="4500" data-service="Коуч-сессия">
+                Оплатить
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    @@include('partials/footer.html', {})
+    @@include('partials/js.html', {})
+    @@include('partials/request-form.html', {})
+    @@include('partials/payment-form.html', {})
+
+    <script type="module" src="/scripts/js/products.js"></script>
+
+  </div>
+</body>
+
+</html>

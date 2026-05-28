@@ -1,0 +1,12 @@
+//_page-themes.scss
+@use 'variables' as *;
+
+.page-oferta,
+.page-requisites,
+.page-oplata,
+.page-personal,
+.page-agreement,
+.page-strategy-new-year {
+  background: $color-text;
+  color: $color-bg;
+}

@@ -1,0 +1,363 @@
+// src/scss/pages/serf-session.scss
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+@use 'session-base'; // базовые стили сессии
+
+// ==============================
+// МОДИФИКАЦИИ ДЛЯ STR-СЕССИИ
+// ==============================
+.page-serf-session {
+  .session {
+    background-color: #ff9900;
+
+    &__text-block::after {
+      background: linear-gradient(180deg, #2d1b00, rgba($color-container-bg, 0) 100%);
+      height: 1070px;
+    }
+
+    &__link {
+      background: #ffdca8;
+      color: $color-bg;
+
+      &:hover {
+        background: $color-bg;
+        color: #ffdca8;
+      }
+
+      &_black {
+        background: $color-bg;
+        color: #ffdca8;
+
+        &:hover {
+          background: #ffdca8;
+          color: $color-bg;
+        }
+      }
+    }
+
+    &__subtitle {
+      max-width: 610px;
+      margin: 6px 0 80px 44px;
+      line-height: 30px;
+
+      @include respond-to(768px) {
+        margin: 0 0 30px 0;
+      }
+
+      @include respond-to(430px) {
+        margin: 0 0 15px 0;
+      }
+    }
+  }
+}
+
+// ==============================
+// СПИСОК ЭТАПОВ (session-list)
+// ==============================
+.session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin: 0 0 75px 0;
+  position: relative;
+  z-index: 1;
+
+  @include respond-to(768px) {
+    margin: 0 0 40px 0;
+    gap: 20px;
+  }
+
+  &__item {
+    display: flex;
+    gap: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+
+    &._active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @include respond-to(768px) {
+      gap: 20px;
+    }
+  }
+
+  &__num {
+    font-size: 128px;
+    line-height: 100%;
+    text-align: right;
+    min-width: 90px;
+    font-weight: 800;
+    color: $color-text;
+
+    @include respond-to(768px) {
+      font-size: clamp(2.5rem, 0.3417rem + 10.7914vw, 6.25rem);
+      min-width: clamp(1.25rem, -0.1888rem + 7.1942vw, 3.75rem);
+    }
+  }
+
+  &__text {
+    font-size: 28px;
+    line-height: 127%;
+    font-weight: 700;
+    margin: 8px 0 0 0;
+
+    @include respond-to(768px) {
+      font-size: clamp(1rem, 0.5683rem + 2.1583vw, 1.75rem);
+    }
+
+    .orange {
+      color: #ff9900;
+      font-weight: 900;
+    }
+
+    .black {
+      color: #000;
+      font-weight: 900;
+    }
+  }
+}
+
+// ==============================
+// БЛОК ЗАГРУЗКИ (session-download)
+// ==============================
+.session-download {
+  display: flex;
+  padding: 0 0 0 40px;
+  gap: 105px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+
+  @include respond-to(940px) {
+    gap: 40px;
+    padding: 0;
+  }
+
+  @include respond-to(820px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  // .session-download__item
+  &__item {
+    display: flex;
+    gap: 30px;
+    color: $color-bg;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+
+    &._active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &:hover {
+      color: $color-text;
+    }
+  }
+
+  &__img {
+    width: 75px;
+    margin: 8px 0 0 0;
+    transition: all 0.3s ease;
+    background-size: 57px 107px;
+    position: relative;
+    z-index: 10;
+
+    &_01 {
+      background: url(../img/serf-session/download01.png) 0 0 no-repeat;
+    }
+
+    &_02 {
+      background: url(../img/serf-session/download02.png) 0 0 no-repeat;
+    }
+
+    background-size: 40px 70px;
+
+    @include respond-to(820px) {
+      width: 46px;
+      background-size: 29px 54px;
+    }
+  }
+
+  .session-download__item:hover &__img_01 {
+    background: url(../img/serf-session/download-hover01.png) 0 0 no-repeat;
+    background-size: 40px 70px;
+  }
+
+  .session-download__item:hover &__img_02 {
+    background: url(../img/serf-session/download-hover02.png) 0 0 no-repeat;
+    background-size: 40px 70px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__text {
+    font-size: 28px;
+    line-height: 127%;
+    font-weight: 700;
+
+    @include respond-to(940px) {
+      font-size: clamp(1rem, 0.5683rem + 2.1583vw, 1.75rem);
+    }
+  }
+
+  &__label {
+    font-size: 40px;
+    line-height: 127%;
+    font-weight: 900;
+
+    @include respond-to(940px) {
+      font-size: clamp(1.25rem, 0.5306rem + 3.5971vw, 2.5rem);
+    }
+  }
+}
+
+// ==============================
+// БЛОК SERF-SESSION (аналог servise-session)
+// ==============================
+.serf-session {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
+  margin: 110px 0 100px;
+
+  @include respond-to(920px) {
+    justify-content: flex-start;
+  }
+
+  @include respond-to(768px) {
+    margin: 50px 0;
+  }
+
+  @include respond-to(430px) {
+    margin: 30px 0;
+  }
+
+  &__items {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 620px;
+    gap: 75px;
+
+    @include respond-to(768px) {
+      gap: 30px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(1.25rem, 0.5306rem + 3.5971vw, 2.5rem);
+  }
+
+  &__img {
+    height: 75px;
+    margin: 10px 0 0;
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s;
+
+    &._active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @include respond-to(920px) {
+      height: clamp(2.5rem, 1.6007rem + 4.4964vw, 4.0625rem);
+    }
+
+    @include respond-to(768px) {
+      margin: 0;
+    }
+  }
+
+  &__block {
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 130%;
+    opacity: 0;
+    transform: translateX(200px);
+    transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s;
+
+    &._active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @include respond-to(920px) {
+      font-size: clamp(1.25rem, 0.8903rem + 1.7986vw, 1.875rem);
+    }
+
+    @include respond-to(350px) {
+      font-size: 16px;
+    }
+  }
+
+  &__title {
+    color: $color-text;
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 128%;
+    color: $color-text;
+    margin-top: 10px;
+
+    @include respond-to(768px) {
+      font-size: clamp(1rem, 0.5683rem + 2.1583vw, 1.75rem);
+    }
+  }
+
+  &__text {
+    color: $color-bg;
+    font-weight: 700;
+
+    &:not(:last-child) {
+      margin: 0 0 20px;
+    }
+  }
+
+  &__decor-img {
+    position: absolute;
+    top: -123px;
+    left: -399px;
+    width: 410px;
+    height: auto;
+    opacity: 0;
+    transform: translateY(-270px);
+    transition: opacity 0.9s ease 1s, transform 0.9s ease 1s;
+
+    &._active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @include respond-to(920px) {
+      top: 29px;
+      left: 450px;
+      width: 253px;
+    }
+
+    @include respond-to(768px) {
+      top: 29px;
+      width: 203px;
+    }
+
+    @include respond-to(450px) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,497 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ==============================
+// ОБЩИЕ КЛАССЫ
+// ==============================
+
+.subtitle {
+  font-size: 20px;
+  color: $color-bg;
+
+  @include respond-to(768px) {
+    font-size: 18px;
+  }
+}
+
+.label {
+  margin: 0 0 5px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 140%;
+  color: $color-accent;
+}
+
+.text {
+  line-height: 1.6;
+  color: $color-bg;
+}
+
+.example {
+  font-style: italic;
+  font-weight: 500;
+  color: $color-bg;
+}
+
+.item-title {
+  padding-top: 10px;
+  font-weight: 600;
+}
+
+.item-subtitle {
+  padding-top: 10px;
+  font-style: italic;
+  font-weight: 600;
+  color: #6d6c6c;
+}
+
+// ==============================
+// ФОН СТРАНИЦЫ ТЕХНИК
+// ==============================
+.page-technics {
+  background: linear-gradient(145deg, #f0f4f8 0%, #d9e2ec 100%);
+}
+
+// ==============================
+// КОНТЕЙНЕР
+// ==============================
+.technics__container {
+  padding: 0 15px;
+}
+
+// ==============================
+// ОСНОВНАЯ СЕТКА ТЕХНИК
+// ==============================
+.technics-main {
+  margin-top: 90px;
+  padding: 50px 0;
+
+  @include respond-to(980px) {
+    margin-top: 80px;
+    padding: 30px 0;
+  }
+
+  &__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    @include respond-to(1100px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: center;
+    color: $color-text;
+
+    @include respond-to(980px) {
+      font-size: 24px;
+    }
+
+    @include respond-to(768px) {
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 140%;
+    }
+  }
+}
+
+// ==============================
+// КАРТОЧКИ (СТЕКЛЯННЫЙ ЭФФЕКТ)
+// ==============================
+.card {
+  position: relative;
+  padding: 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  @include respond-to(920px) {
+    padding: 14px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 360px;
+
+    @include respond-to(1100px) {
+      height: 320px;
+    }
+
+    @include respond-to(768px) {
+      height: auto;
+      justify-content: flex-start;
+    }
+  }
+
+  &__top {
+    display: grid;
+    grid-template-rows: 110px auto auto;
+    gap: 5px;
+  }
+
+  &__img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    justify-self: center;
+    overflow: hidden;
+    border-radius: 120px;
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+
+    @include respond-to(768px) {
+      font-size: 14px;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 150%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+
+    @include respond-to(768px) {
+      font-size: 12px;
+    }
+  }
+
+  &__category,
+  &__time {
+    position: absolute;
+    top: 10px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+
+    @include respond-to(768px) {
+      top: 5px;
+      width: 90px;
+      font-size: 10px;
+    }
+  }
+
+  &__category {
+    left: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+
+    @include respond-to(768px) {
+      left: 5px;
+    }
+
+    &.motives {
+      background: rgba($color-secondary, 0.85);
+    }
+
+    &.meanings {
+      background: rgba($color-link-hover, 0.85);
+    }
+
+    &.words {
+      background: rgba($color-link, 0.85);
+    }
+
+    &.processes {
+      background: rgba($color-bg-footer-gradient, 0.85);
+    }
+
+    &.states {
+      background: rgba(#ff9900, 0.85);
+    }
+  }
+
+  &__time {
+    right: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+
+    @include respond-to(768px) {
+      right: 5px;
+    }
+  }
+
+  &__link {
+    align-self: flex-start;
+    border-bottom: 1px solid;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    color: #ffdd77;
+    transition: all 0.3s;
+    z-index: 5;
+
+    &:hover {
+      color: #ffaa33;
+    }
+
+    &:active {
+      color: $color-bg;
+    }
+
+    @include respond-to(768px) {
+      margin: 10px 0 0 10px;
+      font-size: 12px;
+    }
+  }
+}
+
+// ==============================
+// ФИЛЬТРЫ И СОРТИРОВКА
+// ==============================
+.filter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  @include respond-to(630px) {
+    flex-direction: column;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 10px;
+
+    @include respond-to(980px) {
+      flex-direction: column;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: transparent;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include respond-to(480px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px 5px;
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    padding: 2px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &.active {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: #fff;
+      color: #000;
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+
+    @include respond-to(370px) {
+      padding: 7px;
+      font-size: 11px;
+      line-height: 11px;
+    }
+  }
+
+  &__sort {
+    align-self: flex-end;
+
+    @include respond-to(980px) {
+      margin-top: 20px;
+    }
+
+    @include respond-to(630px) {
+      align-self: flex-start;
+      margin-top: 10px;
+    }
+  }
+}
+
+.reset-filter {
+  display: none;
+  margin: 32px 0 10px;
+  border: none;
+  background: none;
+  color: #ffdd77;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #fff;
+  }
+
+  @include respond-to(980px) {
+    margin: 0;
+  }
+}
+
+.no-cards-placeholder {
+  width: 400px;
+  margin: 0 auto;
+  padding: 50px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 20px;
+  line-height: 140%;
+  text-align: center;
+
+  @include respond-to(768px) {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+// ==============================
+// ВЫПАДАЮЩИЙ СПИСОК СОРТИРОВКИ
+// ==============================
+.sort {
+  &__dropdown {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    font-size: 12px;
+    color: #fff;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  &__selected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    color: #fff;
+  }
+
+  &__options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 11;
+    display: none;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    background: rgba(30, 30, 40, 0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    img {
+      width: 9px;
+      height: 12px;
+      margin-left: 10px;
+    }
+
+    &_02 img {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__selected-arrow {
+    width: 9px;
+    height: 12px;
+    margin-left: 10px;
+
+    &.sort__option_02 {
+      transform: rotate(180deg);
+    }
+  }
+}

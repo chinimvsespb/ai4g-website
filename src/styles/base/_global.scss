@@ -1,0 +1,35 @@
+// src/styles/base/_global.scss
+@use 'variables' as *;
+
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100%;
+  font-family: $font-main;
+  font-weight: 400;
+  color: $color-text;
+  background: $color-bg;
+  overflow-x: hidden;
+  line-height: 1.5;
+  font-size: $font-size-mobile;
+}
+
+@media (min-width: 54.75em) {
+  body {
+    font-size: $font-size-base;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+}

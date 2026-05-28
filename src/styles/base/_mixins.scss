@@ -1,0 +1,6 @@
+// src/styles/base/_mixins.scss
+@mixin respond-to($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}

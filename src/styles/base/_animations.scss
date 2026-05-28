@@ -1,0 +1,245 @@
+//_animations.scss
+
+/* ========== header ========== */
+@keyframes header-triangle {
+  0% {
+    transform: translate(-140px, 0);
+    opacity: 0.1;
+  }
+
+  100% {
+    transform: translate(-32px, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes header-text {
+  0% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes header-suptext {
+  0% {
+    opacity: 0;
+  }
+
+  55% {
+    top: 38px;
+    left: 90px;
+    opacity: 0;
+  }
+
+  100% {
+    top: 38px;
+    left: 22px;
+    opacity: 1;
+  }
+}
+
+@keyframes header-line {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+//главная - fairway------------------------
+@keyframes fairway {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+//--главная---choice---------------------------
+
+@keyframes ci-1 {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes ci-2 {
+  0% {
+    transform: translateX(-250px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes ci-3 {
+  0% {
+    transform: translateX(-290px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+//-главная--plane-----------------------------
+@keyframes plane1 {
+  0% {
+    transform: translateX(-50px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes plane2 {
+  0% {
+    transform: translateX(-107px);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translateX(-97px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(-1px);
+    opacity: 1;
+  }
+}
+
+@keyframes plane3 {
+  0% {
+    transform: translateX(-101px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(-1px);
+    opacity: 1;
+  }
+}
+
+@keyframes plane4 {
+  0% {
+    transform: translateX(-101px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(-6px);
+    opacity: 1;
+  }
+}
+
+//-главная--partners-----------------------------
+
+// Ключевые кадры анимаций
+@keyframes pi-anim-1 {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes pi-anim-2 {
+  0% {
+    transform: translateX(-250px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes pi-anim-3 {
+  0% {
+    transform: translateX(-290px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+//--------------------------------
+._anim-items {
+  opacity: 1;
+  transform: translateY(0);
+
+  &._hidden {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  &._active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// возможности --------------
+@keyframes expand {
+  from {
+    height: 0;
+    opacity: 0;
+    padding: 0 20px;
+  }
+
+  to {
+    height: auto;
+    opacity: 1;
+    padding: 20px;
+  }
+}
+
+@keyframes collapse {
+  from {
+    height: auto;
+    opacity: 1;
+    padding: 20px;
+  }
+
+  to {
+    height: 0;
+    opacity: 0;
+    padding: 0 20px;
+  }
+}

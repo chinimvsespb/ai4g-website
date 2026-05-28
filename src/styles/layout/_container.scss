@@ -1,0 +1,24 @@
+@use '../base/variables' as *;
+
+[class*="__container"] {
+  max-width: $container-max-width;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 1.75rem;
+
+  @media (max-width: 61.99875em) {
+    padding: 0 15px;
+  }
+}
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.container-big {
+  max-width: 882px;
+  margin: 0 auto;
+  padding: 0 28px;
+}

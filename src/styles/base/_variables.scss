@@ -1,0 +1,46 @@
+//  _variables.scss
+
+@use 'sass:map';
+
+// ======= SCSS ПЕРЕМЕННЫЕ =======
+$color-bg: #150931;
+$color-accent: #ff008a;
+$color-secondary: #06ea6f;
+$color-gray: #71717a;
+$color-text: #fff;
+$color-header-gradient1: #ff008a;
+$color-header-gradient2: #2bf29f;
+$color-link: #0386ff;
+$color-link-hover: #93cbff;
+$color-container-bg: #2c334b;
+$font-main: 'Montserrat', sans-serif;
+$font-size-base: 1.125rem; // 18px
+$font-size-mobile: 1rem; // 16px
+$container-max-width: 850px;
+$border-radius-main: 37px;
+$choice-title-size: 38px;
+$choice-title-size-mobile: 22px;
+$color-capability-gradient: #e2ddd6;
+$color-dark: #000;
+
+$color-headerSubtext: #a99ec2;
+$font-main: 'Montserrat', sans-serif;
+$font-alt: 'PT Sans', sans-serif;
+
+$slider-arrow-width: 48px;
+$slider-arrow-height: 53px;
+$slider-arrow-prev: '../img/slider-active-left.svg';
+$slider-arrow-next: '../img/slider-active-right.svg';
+$slider-arrow-prev-disabled: '../img/slider-disable-left.svg';
+$slider-arrow-next-disabled: '../img/slider-disable-right.svg';
+
+$color-bg-footer-gradient: #4a006c;
+$footer-bg-img: "../img/footer-bg.svg";
+
+$color-drop-list-gradient: #4a006c;
+$color-drop-list-divider: #71717a;
+$color-drop-list-accent: #2bf29f;
+
+$card-bg: #f8f9fa;        // светло-серый, не белый
+$filter-bg: #ffffff;
+$body-bg: #eef2f5;        // фон всей страницы

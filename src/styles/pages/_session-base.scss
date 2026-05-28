@@ -1,0 +1,287 @@
+// src/scss/pages/_session-base.scss
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ==============================
+// БАЗОВЫЕ СТИЛИ ДЛЯ СЕКЦИИ SESSION
+// ==============================
+.session {
+  padding: 90px 0 100px 0;
+
+  @include respond-to(980px) {
+    padding: 90px 0 100px 0;
+  }
+  @include respond-to(768px) {
+    padding: 90px 0 50px 0;
+  }
+
+  &__container {
+    max-width: 900px;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__content {
+    position: relative;
+    @include respond-to(430px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+
+  &__coach {
+    position: absolute;
+    right: 28px;
+    top: 27px;
+    width: 115px;
+    border-radius: 9px;
+    z-index: 1;
+    @include respond-to(768px) {
+      right: 0;
+      top: -8px;
+      width: 70px;
+    }
+    @include respond-to(430px) {
+      position: static;
+      align-self: center;
+      width: 80px;
+    }
+  }
+
+  &__title-block {
+    padding: 38px 0;
+    @include respond-to(980px) {
+      padding: 20px 0;
+    }
+    @include respond-to(430px) {
+      padding: 10px 0;
+    }
+  }
+
+  &__text-block {
+    padding: 21px 0 0 0;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 473px;
+      top: 0;
+      left: 0;
+    }
+    @include respond-to(980px) {
+      padding: 30px 0 0 0;
+    }
+    @include respond-to(430px) {
+      padding: 10px 0 0 0;
+    }
+  }
+
+  &__title {
+    color: $color-text;
+    font-weight: 800;
+    font-size: 40px;
+    margin: 0 0 0 40px;
+    line-height: 50px;
+    @include respond-to(768px) {
+      margin: 0;
+      font-size: clamp(1.25rem, 0.8903rem + 1.7986vw, 1.875rem);
+      line-height: clamp(2.125rem, 1.9451rem + 0.8993vw, 2.4375rem);
+    }
+    @include respond-to(430px) {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    margin: 3px 0 125px 44px;
+    position: relative;
+    z-index: 1;
+    @include respond-to(768px) {
+      margin: 0 0 30px 0;
+      font-size: clamp(1rem, 0.7842rem + 1.0791vw, 1.375rem);
+      line-height: clamp(1.875rem, 1.7311rem + 0.7194vw, 2.125rem);
+    }
+    @include respond-to(430px) {
+      margin: 0 0 15px 0;
+    }
+  }
+
+  &__text {
+    font-weight: 700;
+    color: $color-text;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 680px;
+    padding-bottom: 30px;
+    font-size: 28px;
+    line-height: 34px;
+    @include respond-to(768px) {
+      padding-bottom: 20px;
+      font-size: clamp(1rem, 0.5683rem + 2.1583vw, 1.75rem);
+      line-height: clamp(1.375rem, 0.9433rem + 2.1583vw, 2.125rem);
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include respond-to(768px) {
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+
+  &__btn-block {
+    margin: 0 0 50px 0;
+  }
+}
+
+// ==============================
+// БАЗОВЫЕ СТИЛИ ДЛЯ БЛОКА SOLUTION
+// ==============================
+.solution {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+  position: relative;
+  z-index: 1;
+  column-gap: 18px;
+
+  @include respond-to(768px) {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  &__item {
+    display: flex;
+    opacity: 0;
+    transform: translateY(-70px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__img {
+    width: 18px;
+    height: 18px;
+    margin: 6px 22px 0 5px;
+    @include respond-to(430px) {
+      margin: 0 15px 0 0;
+    }
+    &_triangle {
+      height: 23px;
+      width: 26px;
+      margin: 6px 20px 0 0;
+      @include respond-to(430px) {
+        margin: 0 11px 0 -4px;
+      }
+    }
+  }
+
+  &__text {
+    font-weight: 700;
+    color: $color-text;
+    max-width: 391px;
+    font-size: 28px;
+    line-height: 35px;
+    @include respond-to(920px) {
+      font-size: clamp(0.875rem, 0.5872rem + 1.4388vw, 1.375rem);
+      line-height: clamp(1.125rem, 0.3696rem + 3.777vw, 2.4375rem);
+    }
+    @include respond-to(768px) {
+      max-width: none;
+    }
+    @include respond-to(430px) {
+      font-weight: 600;
+    }
+  }
+}
+
+// ==============================
+// БАЗОВЫЕ СТИЛИ ДЛЯ БЛОКА SERVISE-SESSION
+// ==============================
+.servise-session {
+  display: flex;
+  margin: 140px 0 100px 0;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
+
+  @include respond-to(920px) {
+    justify-content: flex-start;
+  }
+  @include respond-to(768px) {
+    margin: 50px 0;
+  }
+  @include respond-to(430px) {
+    margin: 30px 0;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    width: 620px;
+    gap: 75px;
+    position: relative;
+    @include respond-to(768px) {
+      gap: 30px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.25rem, 0.5306rem + 3.5971vw, 2.5rem);
+  }
+
+  &__img {
+    height: 75px;
+    margin: 10px 0 0 0;
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s;
+    &.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    @include respond-to(920px) {
+      height: clamp(2.5rem, 1.6007rem + 4.4964vw, 4.0625rem);
+    }
+  }
+
+  &__block {
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 49px;
+    opacity: 0;
+    transform: translateX(200px);
+    transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s;
+    &.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    @include respond-to(920px) {
+      margin: 0;
+      font-size: clamp(1.25rem, 0.8903rem + 1.7986vw, 1.875rem);
+      line-height: clamp(2.125rem, 1.9451rem + 0.8993vw, 2.4375rem);
+    }
+    @include respond-to(350px) {
+      font-size: 16px;
+    }
+  }
+
+  &__title {
+    color: $color-text;
+  }
+}

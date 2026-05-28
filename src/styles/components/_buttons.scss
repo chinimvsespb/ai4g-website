@@ -1,0 +1,83 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+/* ========== BTN ========== */
+.btn {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  height: 60px;
+  border: 2px solid $color-accent;
+  border-radius: $border-radius-main;
+  background: $color-accent;
+  color: $color-text;
+  font-weight: 700;
+  font-size: $font-size-base;
+  line-height: 110%;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+
+  &--secondary {
+    background: $color-secondary;
+    border-color: $color-secondary;
+    color: $color-dark;
+
+    &:hover {
+      background: $color-text;
+      border-color: $color-text;
+      color: $color-dark;
+    }
+  }
+
+
+  &:hover {
+    background: $color-secondary;
+    border-color: $color-secondary;
+    color: #000;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+/* ========== LINK ========== */
+.link {
+  position: relative;
+  z-index: 10;
+  width: 822px;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $color-secondary;
+  color: $color-bg;
+  border-radius: $border-radius-main;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 37px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $color-accent;
+  }
+
+  @include respond-to(880px) {
+    width: 592px;
+    height: 60px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  @include respond-to(768px) {
+    width: 316px;
+    font-size: $font-size-base;
+    line-height: 22px;
+  }
+}

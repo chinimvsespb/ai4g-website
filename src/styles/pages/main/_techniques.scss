@@ -1,0 +1,58 @@
+@use '../../base/variables' as *;
+
+.techniques {
+  padding: 80px 0;
+  text-align: center;
+  background: linear-gradient(180deg, #03065c 0%, rgba($color-container-bg, 0) 100%);
+  color: $color-text; // белый текст
+  font-family: $font-main;
+
+  @media (max-width: 768px) {
+    padding: 55px 0;
+  }
+
+  &__title {
+    max-width: 660px;
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: $choice-title-size; // 38px
+    line-height: 46px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: $color-text;
+
+    @media (max-width: 768px) {
+      font-size: $choice-title-size-mobile; // 22px
+      line-height: 27px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 20px;
+    color: $color-text;
+
+    @media (max-width: 768px) {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 50px;
+    color: $color-text;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+  }
+}

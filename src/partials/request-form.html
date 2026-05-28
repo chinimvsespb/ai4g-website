@@ -1,0 +1,56 @@
+<!-- src\partials\request-form.html -->
+
+<!-- Форма записи на сессию -->
+<div class="modal-request" id="modal-request">
+  <h3 class="modal-request__title">
+    Запись на serf-сессию
+  </h3>
+  <form class="modal-request__form" action="/php/mail.php" enctype="multipart/form-data" method="POST">
+    <div class="modal-request__item">
+      <input class="modal-request__name" data-validate-field="name" name="Имя" type="text" placeholder="Представьтесь, пожалуйста" />
+    </div>
+    <div class="modal-request__item">
+      <input class="modal-request__phone" data-validate-field="tel" name="Телефон" type="tel" placeholder="Телефон" />
+    </div>
+    <div class="modal-request__item">
+      <input class="modal-request__phone modal-request__email" data-validate-field="email" name="email" type="email" placeholder="Электронная почта" />
+    </div>
+
+    <input type="hidden" name="page_title" value="" />
+    <input type="text" name="hidden_field" style="display: none" />
+
+    <div class="modal-request__choice">
+      <div class="modal-request__left">Предпочтительный способ связи:</div>
+      <div class="modal-request__right">
+        <label class="modal-request__label"><input class="modal-request__radio" type="radio" name="Предпочтительный способ связи:" value="Телефон" checked /><span>Телефон</span></label>
+        <label class="modal-request__label"><input class="modal-request__radio" type="radio" name="Предпочтительный способ связи:" value="WhatsApp" /><span>WhatsApp</span></label>
+        <label class="modal-request__label"><input class="modal-request__radio" type="radio" name="Предпочтительный способ связи:" value="Telegram" /><span>Telegram</span></label>
+      </div>
+    </div>
+
+    <div class="modal-request__captcha">
+      <div class="g-recaptcha" data-sitekey="6LfKg1osAAAAAM3K2KcCVneFAbBfcsBCwvpBbOhM"></div>
+      <div id="recaptchaError" style="display:none; color:#e24343; font-size:14px; margin-top:8px;">
+        Пожалуйста, подтвердите, что вы не робот
+      </div>
+    </div>
+
+    <button class="modal-request__btn" type="submit">Записаться</button>
+  </form>
+
+  <div class="modal-request__agree">
+    Отправляя форму, вы&nbsp;соглашаетесь с&nbsp;обработкой персональных данных и&nbsp;
+    <a href="https://ai4g.ru/oferta.html" target="_blank">
+      <span>условиями договора-оферты</span>
+    </a>
+  </div>
+</div>
+
+<!-- popup об успешной записи -->
+<div class="modal-thanks" id="modal-thanks">
+  <div class="modal-thanks__logo">
+    <img src="img/modal-thanks-logo.svg" alt="Ai4G" loading="lazy" />
+  </div>
+  <h3 class="modal-thanks__title">Вы&nbsp;успешно отправили заявку.</h3>
+  <div class="modal-thanks__text">В&nbsp;ближайшее время мы&nbsp;свяжемся с&nbsp;вами указанным способом</div>
+</div>

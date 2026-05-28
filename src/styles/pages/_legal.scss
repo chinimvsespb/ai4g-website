@@ -1,0 +1,185 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.legal {
+  padding: 140px 0 50px 0;
+  font-size: 14px;
+  line-height: 1.5;
+
+  @include respond-to(980px) {
+    padding: 120px 0 30px 0;
+  }
+
+  // .legal__container
+  &__container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-inline: 28px;
+
+    @include respond-to(768px) {
+      padding-inline: 15px;
+    }
+  }
+
+  // .legal__title
+  &__title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+
+    @include respond-to(768px) {
+      font-size: 22px;
+    }
+  }
+
+  // .legal__suptitle
+  &__suptitle {
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+
+    @include respond-to(768px) {
+      margin-bottom: 20px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+
+  // .legal__text
+  &__text {
+    text-align: justify;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    p:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &--small {
+      font-size: 13px;
+    }
+  }
+
+  // .legal__label
+  &__label {
+    margin-bottom: 10px;
+    font-size: 19px;
+    font-weight: 600;
+
+    @include respond-to(768px) {
+      margin-bottom: 20px;
+      font-size: 17px;
+    }
+  }
+
+  // .legal__sublabel
+  &__sublabel {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  // .legal__accent
+  &__accent {
+    font-weight: 500;
+  }
+
+  a {
+    color: $color-link;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // .legal__list
+  &__list {
+    margin: 10px 0 0 20px;
+
+    li {
+      margin: 0 0 10px 0;
+      position: relative;
+      padding-left: 25px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        background-color: $color-bg;
+        border-radius: 50%;
+      }
+    }
+
+    @include respond-to(768px) {
+      margin-left: 10px;
+    }
+
+    li:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  // .legal__contact
+  &__contact {
+    margin-bottom: 20px;
+
+    li:not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    @include respond-to(768px) {
+      font-size: 14px;
+    }
+  }
+
+  //.legal__table
+  &__table {
+    margin: 20px 0 50px 0;
+    width: 100%;
+    border-collapse: collapse;
+
+    @include respond-to(800px) {
+      display: none;
+    }
+
+    td:first-child {
+      color: #000;
+      font-weight: 500;
+    }
+
+    td {
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid $color-accent;
+    }
+  }
+
+  //.legal__table-flex
+  &__table-flex {
+    margin: 0 0 30px 0;
+    width: 100%;
+    font-size: 14px;
+    line-height: 140%;
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+
+    &-item div:first-child {
+      color: #000;
+      font-weight: 500;
+      font-size: 13px;
+    }
+
+    @media (min-width: 800px) {
+      display: none;
+    }
+  }
+}

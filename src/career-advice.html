@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('partials/head.html', {"title": "Карьерная консультация с Еленой Семеновой – Развитие карьеры - Ai4G", "description": "Получите карьерную консультацию от Елены Семеновой и узнайте, как достичь успеха и преодолеть карьерные преграды.🔹 Нейросервис Ai4G - Запишись на serf-сессию"})
+
+
+<body class="body page-career-advice">
+  <div class="wrapper">
+    @@include('partials/header.html', {})
+
+
+    <main class="page">
+      <!-- Предложение -->
+      <section class="session">
+        <div class="session__title-block">
+          <div class="session__container">
+            <div class="session__content">
+              <h1 class="session__title">Карьерная консультация <br /><span>с Еленой Семеновой —</span></h1>
+              <picture>
+                <source srcset="img/coaching-session/coach.webp" type="image/webp" />
+                <img src="img/coaching-session/coach.jpg" alt="" class="session__coach" />
+              </picture>
+            </div>
+          </div>
+        </div>
+
+        <div class="session__text-block">
+          <div class="session__container">
+            <div class="session__subtitle">это решение вопросов с выгодным трудоустройством</div>
+            <div class="session__solution solution">
+              <div class="solution__item solution__item_01">
+                <img src="img/career-advice/square.png" alt="" class="solution__img" />
+                <div class="solution__text">Чек-лист по резюме, рекомендации по улучшению резюме</div>
+              </div>
+
+              <div class="solution__item solution__item_02">
+                <img src="img/coaching-session/triangle.png" alt="" class="solution__img solution__img_triangle" />
+                <div class="solution__text">Корректировка действий по поиску работы</div>
+              </div>
+
+              <div class="solution__item solution__item_03">
+                <img src="img/coaching-session/triangle.png" alt="" class="solution__img solution__img_triangle" />
+                <div class="solution__text">Рекомендации по организации поиска работы</div>
+              </div>
+
+              <div class="solution__item solution__item_04">
+                <img src="img/career-advice/square.png" alt="" class="solution__img" />
+                <div class="solution__text">Подготовка к собеседованиям</div>
+              </div>
+
+              <div class="solution__item solution__item_05">
+                <img src="img/career-advice/square.png" alt="" class="solution__img" />
+                <div class="solution__text">Разработка персональной стратегии поиска работы</div>
+              </div>
+              <div class="solution__item solution__item_06">
+                <img src="img/coaching-session/triangle.png" alt="" class="solution__img solution__img_triangle" />
+                <div class="solution__text">
+                  Комплексное тестирование личности: мотивация, соответствие культуре, уровень управленческих и бизнес компетенций, потенциал,
+                  интеллектуальные способности.
+                </div>
+              </div>
+            </div>
+            <div class="session__servise servise-session">
+              <div class="servise-session__items">
+                <div class="servise-session__item">
+                  <picture>
+                    <source srcset="img/career-advice/cost.webp" type="image/webp" />
+                    <img src="img/career-advice/cost.png" alt="" class="servise-session__img" />
+                  </picture>
+                  <div class="servise-session__block">
+                    <div class="servise-session__title">Стоимость продукта</div>
+                    <div class="servise-session__text">15 000 ₽</div>
+                  </div>
+                </div>
+
+                <div class="servise-session__item">
+                  <picture>
+                    <source srcset="img/career-advice/time.webp" type="image/webp" />
+                    <img src="img/career-advice/time.png" alt="" class="servise-session__img" />
+                  </picture>
+                  <div class="servise-session__block">
+                    <div class="servise-session__title">Длительность</div>
+                    <div class="servise-session__text">60 минут</div>
+                  </div>
+                </div>
+
+                <div class="servise-session__item">
+                  <picture>
+                    <source srcset="img/career-advice/format.webp" type="image/webp" />
+                    <img src="img/career-advice/format.png" alt="" class="servise-session__img" />
+                  </picture>
+                  <div class="servise-session__block">
+                    <div class="servise-session__title">Формат проведения <br />консультации</div>
+                    <div class="servise-session__text">онлайн</div>
+                  </div>
+                </div>
+                <picture>
+                  <source srcset="img/career-advice/decor-career.webp" type="image/webp" />
+                  <img src="img/career-advice/decor-career.png" alt="" class="servise-session__decor-img" />
+                </picture>
+              </div>
+            </div>
+            <!-- КНОПКИ -->
+            <div class="session__btn-block">
+              <div class="session__text">Запишитесь на консультацию <br />и задайте интересующие вопросы</div>
+              <a href="#modal-request" class="session__link link" data-fancybox data-modal-title="Запись на serf-сессию"> записаться </a>
+            </div>
+            <div class="session__text">Оплатите карьерную консультацию</div>
+
+            <a href="#payment" class="session__link link session__link_green" data-fancybox data-modal-title="Оплата коуч-сессии" data-sum="15000" data-service="Коуч-сессия">
+              Оплатить
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    @@include('partials/footer.html', {})
+    @@include('partials/js.html', {})
+    @@include('partials/request-form.html', {})
+    @@include('partials/payment-form.html', {})
+<script type="module" src="/pages/career-advice-page.js"></script>
+
+  </div>
+</body>
+
+</html>

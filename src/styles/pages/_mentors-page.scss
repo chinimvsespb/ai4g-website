@@ -1,0 +1,338 @@
+
+
+// _mentors.scss
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.body-mentors {
+  min-width: 320px;
+  min-height: 100%;
+  font-family: $font-main;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  background: $color-text;
+  color: #000;
+  overflow-x: hidden;
+
+  @include respond-to(768px) {
+    font-size: 11px;
+    line-height: 16px;
+  }
+}
+
+.container-mentors {
+  max-width: 946px;
+  margin: 0 auto;
+  padding: 0 28px;
+
+  @include respond-to(520px) {
+    padding: 0 15px;
+  }
+}
+
+
+.elena {
+  padding-top: 140px;
+  position: relative;
+
+  @include respond-to(840px) {
+    padding-top: 120px;
+  }
+
+  @include respond-to(768px) {
+    padding-top: 100px;
+  }
+
+  &__square {
+    position: absolute;
+    top: 62%;
+    left: 0;
+
+    @include respond-to(1120px) {
+      display: none;
+    }
+  }
+
+  &__triangle {
+    position: absolute;
+    top: 62%;
+    right: 0;
+
+    @include respond-to(1120px) {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: 45px;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 49px;
+
+    @include respond-to(768px) {
+      margin-bottom: 35px;
+      font-size: 34px;
+      line-height: 40px;
+      text-align: center;
+    }
+  }
+
+  &__top,
+  .igor__top {
+    margin-bottom: 20px;
+    display: flex;
+
+    @include respond-to(840px) {
+      flex-direction: column;
+    }
+
+    @include respond-to(768px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__top-left,
+  .igor__top-left {
+    max-width: 476px;
+    min-width: 476px;
+    margin-right: 35px;
+    display: flex;
+
+    @include respond-to(840px) {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
+    @include respond-to(520px) {
+      min-width: auto;
+      max-width: auto;
+    }
+  }
+
+  &__top-left-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top-left-left-img,
+  .igor__top-left-img {
+    margin: 0 30px 65px 0;
+
+    @include respond-to(768px) {
+      margin: 0 20px 44px 0;
+    }
+
+    @include respond-to(520px) {
+      margin: 0 20px 23px 0;
+    }
+
+    img {
+      min-width: 115px;
+      max-width: 115px;
+      height: 138px;
+      border-radius: 9px;
+    }
+  }
+
+  &__top-left-left-item {
+    margin-bottom: 18px;
+    display: flex;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    color: rgba(0, 0, 0, 0.75);
+
+    @include respond-to(768px) {
+      margin-bottom: 21px;
+      font-size: 11px;
+      line-height: 11px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__top-span1 {
+    margin-right: 3px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 34px;
+    color: rgba(0, 0, 0, 0.5);
+
+    @include respond-to(768px) {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  &__top-span2 {
+    margin-right: 3px;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 34px;
+
+    @include respond-to(768px) {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  &__top-span3 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 34px;
+
+    @include respond-to(768px) {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  &__top-left-right-name,
+  .igor__top-left-right-name {
+    margin-bottom: 6px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+
+    @include respond-to(768px) {
+      margin-bottom: 5px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &__top-left-right-suptitle,
+  .igor__top-left-right-text {
+    margin-bottom: 18px;
+    font-weight: 500;
+
+    @include respond-to(768px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__top-left-right-text,
+  .igor__top-left-right-bold {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+
+    @include respond-to(768px) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    @include respond-to(520px) {
+      line-height: 14px;
+    }
+  }
+
+  &__top-left-right-item {
+    margin-bottom: 5px;
+  }
+
+  &__top-right-bold,
+  .igor__top-right-bold {
+    font-weight: 700;
+  }
+
+  &__top-right-text,
+  .igor__top-right-text {
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  &__bottom,
+  .igor__bottom {
+    max-width: 744px;
+    margin-left: auto;
+
+    @include respond-to(840px) {
+      max-width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  &__bottom-bold {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+
+    @include respond-to(768px) {
+      font-size: 13px;
+      line-height: 15px;
+    }
+  }
+
+  &__bottom-text,
+  .igor__bottom-text {
+    margin-bottom: 12px;
+  }
+
+  &__bottom-ul {
+    margin-bottom: 12px;
+    list-style: none;
+  }
+
+  &__bottom-li {
+    margin-left: 5px;
+    padding-left: 12px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 8px;
+      left: 1px;
+      width: 3px;
+      height: 3px;
+      background: #000;
+      border-radius: 50%;
+    }
+  }
+
+  &__link {
+    margin: 55px auto 65px;
+
+    @include respond-to(768px) {
+      margin: 40px auto 40px;
+    }
+  }
+}
+
+
+.igor {
+  &__top {
+    padding-top: 70px;
+
+    @include respond-to(768px) {
+      padding-top: 50px;
+    }
+  }
+
+  &__line img {
+    width: 100%;
+  }
+
+  &__top-left-right-title {
+    margin-bottom: 6px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    margin: 50px auto 70px;
+
+    @include respond-to(768px) {
+      margin: 40px auto 40px;
+    }
+  }
+}
