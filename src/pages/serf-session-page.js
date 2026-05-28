@@ -1,36 +1,16 @@
 // src/pages/serf-session-page.js
+/**
+ * Serf Session Page - Animation initialization
+ * Uses unified SessionAnimations library
+ */
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Учёт системных настроек анимации
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+import SessionAnimations from './session-animations.js';
 
-  // Функция для анимации элементов с классом _anim-items
-  function animateOnScroll() {
-    const animItems = document.querySelectorAll("._anim-items");
-    if (!animItems.length) return;
+document.addEventListener('DOMContentLoaded', function () {
+  // Initialize simple animations for this page
+  const animations = new SessionAnimations({ type: 'simple' });
+  animations.init();
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("_active");
-            observer.unobserve(entry.target); // отключаем наблюдение после активации
-          }
-        });
-      },
-      { threshold: 0.2, rootMargin: "0px 0px -50px 0px" },
-    ); // чуть ниже края экрана
-
-    animItems.forEach((item) => observer.observe(item));
-  }
-
-  // Если анимация отключена в системе – сразу показываем все элементы
-  if (prefersReducedMotion) {
-    document.querySelectorAll("._anim-items").forEach((el) => el.classList.add("_active"));
-  } else {
-    animateOnScroll();
-  }
-
-  // Дополнительно: анимация для элементов, которые могут появиться динамически,
-  // но на этой странице всё статично, достаточно одного вызова.
+  // Cleanup on page unload (important for SPAs)
+  window.addEventListener('beforeunload', () => animations.destroy());
 });
