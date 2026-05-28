@@ -1,0 +1,134 @@
+// _variables.scss
+@use 'sass:map';
+
+// ==============================
+// ОСНОВНЫЕ ЦВЕТА (PRIMARY)
+// ==============================
+$color-bg: #150931;
+$color-text: #fff;
+$color-dark: #000;
+
+// ==============================
+// ЦВЕТА АКЦЕНТОВ (ACCENT)
+// ==============================
+$color-accent: #ff008a;
+$color-secondary: #06ea6f;
+$color-link: #0386ff;
+$color-link-hover: #93cbff;
+$color-gray: #71717a;
+
+// ==============================
+// ЦВЕТА ДЛЯ СЕССИЙ
+// ==============================
+// Базовый оранжевый для всех типов сессий
+$color-session-primary: #ff9900;
+$color-session-light: #ffdca8;
+
+// Специфичные цвета для разных типов сессий (для расширяемости)
+$color-coaching-primary: $color-session-primary;
+$color-coaching-light: $color-session-light;
+$color-career-primary: $color-session-primary;
+$color-serf-primary: $color-session-primary;
+
+// Цвета текста внутри сессий
+$color-session-text-orange: #ff9900;
+$color-session-text-black: #000;
+
+// ==============================
+// ГРАДИЕНТЫ (GRADIENTS)
+// ==============================
+$color-header-gradient1: #ff008a;
+$color-header-gradient2: #2bf29f;
+$color-bg-footer-gradient: #4a006c;
+$color-drop-list-gradient: #4a006c;
+$gradient-session-overlay: linear-gradient(180deg, #2d1b00, rgba($color-container-bg, 0) 100%);
+
+// ==============================
+// КОНТЕЙНЕРЫ И ФОНЫ (BACKGROUNDS)
+// ==============================
+$color-container-bg: #2c334b;
+$color-headerSubtext: #a99ec2;
+$color-capability-gradient: #e2ddd6;
+$card-bg: #f8f9fa;
+$filter-bg: #ffffff;
+$body-bg: #eef2f5;
+$color-drop-list-accent: #2bf29f;
+$color-drop-list-divider: #71717a;
+
+// ==============================
+// ТИПОГРАФИЯ (TYPOGRAPHY)
+// ==============================
+$font-main: 'Montserrat', sans-serif;
+$font-alt: 'PT Sans', sans-serif;
+$font-size-base: 1.125rem; // 18px
+$font-size-mobile: 1rem; // 16px
+
+// ==============================
+// РАЗМЕРЫ И ПРОСТРАНСТВО (SIZING)
+// ==============================
+$container-max-width: 850px;
+$border-radius-main: 37px;
+$choice-title-size: 38px;
+$choice-title-size-mobile: 22px;
+
+// ==============================
+// ПЕРЕХОДЫ И АНИМАЦИИ (TRANSITIONS)
+// ==============================
+$transition-fast: 0.3s ease;
+$transition-base: 0.5s ease;
+$transition-medium: 0.8s ease;
+$transition-slow: 0.9s ease;
+$transition-slower: 1s ease;
+
+// ==============================
+// ОТСТУПЫ И РАССТОЯНИЯ (SPACING)
+// ==============================
+$spacing-section-desktop: 90px 0 100px 0;
+$spacing-section-tablet: 90px 0 50px 0;
+$spacing-section-mobile: 30px 0;
+$spacing-section-mobile-sm: 30px 0;
+
+$spacing-block-large: 140px 0 100px 0;
+$spacing-block-medium: 110px 0 100px;
+$spacing-block-small: 50px 0;
+
+$spacing-gap-large: 75px;
+$spacing-gap-medium: 40px;
+$spacing-gap-small: 30px;
+$spacing-gap-tiny: 20px;
+
+// ==============================
+// СЛАЙДЕР (SLIDER)
+// ==============================
+$slider-arrow-width: 48px;
+$slider-arrow-height: 53px;
+$slider-arrow-prev: '../img/slider-active-left.svg';
+$slider-arrow-next: '../img/slider-active-right.svg';
+$slider-arrow-prev-disabled: '../img/slider-disable-left.svg';
+$slider-arrow-next-disabled: '../img/slider-disable-right.svg';
+
+// ==============================
+// ФОНОВЫЕ ИЗОБРАЖЕНИЯ (BG IMAGES)
+// ==============================
+$footer-bg-img: "../img/footer-bg.svg";
+
+// ==============================
+// КАРТЫ ДЛЯ ОРГАНИЗАЦИИ (MAPS)
+// ==============================
+$session-colors: (
+  'primary': $color-session-primary,
+  'light': $color-session-light,
+  'text': $color-text,
+  'dark': $color-dark,
+  'accent': $color-session-text-orange
+);
+
+$breakpoints: (
+  'sm': 350px,
+  'md': 430px,
+  'lg': 768px,
+  'xl': 820px,
+  'xxl': 920px,
+  'xxxl': 940px,
+  'huge': 980px
+);
